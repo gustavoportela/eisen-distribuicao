@@ -1,26 +1,127 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ─── AZUL PRIMÁRIO DA MARCA ─── */
+  --color-eisen-blue:        #0044F0;   /* brand blue — PANTONE 2132C oficial */
+  --color-eisen-blue-dark:   #0033CC;   /* hover / depth */
+  --color-eisen-blue-deeper: #000066;   /* PANTONE 2738C — azul escuro oficial */
+  --color-eisen-blue-mid:    #1A50F8;   /* tom médio */
+  --color-eisen-blue-tint:   #BAD2FC;   /* PANTONE 2707C — azul claro oficial */
+
+  /* ─── ROSA DA MARCA ─── */
+  --color-eisen-pink:        #FFC4DA;   /* PANTONE 3588C oficial */
+  --color-eisen-pink-mid:    #FF80B0;   /* rosa saturado para acentos */
+  --color-eisen-pink-tint:   #FFF0F5;   /* bg muito claro rosa */
+
+  /* ─── AMARELO ─── */
+  --color-eisen-yellow:      #FFCC00;   /* PANTONE 116C oficial */
+  --color-eisen-yellow-dark: #D4A800;   /* hover */
+
+  /* ─── NEUTROS ─── */
+  --color-eisen-navy:        #000066;   /* PANTONE 2738C — azul escuro oficial */
+  --color-eisen-ink:         #000033;
+  --color-eisen-mid:         #2C3040;
+  --color-eisen-soft:        #555B6A;
+  --color-eisen-faint:       #9199AA;
+  --color-eisen-border:      #E2E5EE;
+  --color-eisen-bg:          #F8F9FC;
+
+  --font-sans:    'Inter', system-ui, sans-serif;
+  --font-display: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-sans);
+    background-color: #ffffff;
+    color: var(--color-eisen-mid);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* ─── TIPOGRAFIA — Outfit para títulos ─── */
+  .text-display {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6.5vw, 5.25rem);
+    font-weight: 600;
+    line-height: 1.0;
+    letter-spacing: -0.04rem;
+  }
+
+  .text-headline {
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 3.75vw, 3rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.04rem;
+  }
+
+  .text-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.25vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02rem;
+  }
+
+  .text-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── TEXTURAS ─── */
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .bg-dot-pattern-dark {
+    background-image: radial-gradient(circle, rgba(0,69,250,0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Grain noise — muito sutil */
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 30;
+    opacity: 0.022;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+    background-repeat: repeat;
+  }
+
+  /* ─── MARQUEE ─── */
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+  }
+  .animate-marquee-reverse {
+    animation: marquee-reverse 44s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
 }
