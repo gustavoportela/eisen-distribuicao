@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { RotatingBadge } from '@/components/ui/RotatingBadge'
 
 // Spring só para whileHover nos cards — não roda no mount
@@ -234,12 +234,12 @@ export function Hero() {
 
         {/* Coluna direita — gradiente */}
         <div style={{ position: 'relative', zIndex: 0, overflow: 'hidden' }}>
-          <Image src="/brand/bg2.png" alt="" fill priority className="object-cover"
+          <Image src="/brand/bg2.jpg" alt="" fill priority sizes="58vw" className="object-cover"
             style={{ objectPosition: 'right center' }} />
         </div>
 
         {/* Cards — Framer Motion APENAS para whileHover (não roda no mount) */}
-        <motion.div
+        <m.div
           className="animate-card-1"
           style={{
             position: 'absolute', zIndex: 20,
@@ -251,9 +251,9 @@ export function Hero() {
         >
           <Image src="/brand/banco-wella.jpg" alt="Wella Professionals"
             fill priority className="object-cover object-center" />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="animate-card-2"
           style={{
             position: 'absolute', zIndex: 20,
@@ -265,7 +265,7 @@ export function Hero() {
         >
           <Image src="/brand/banco-dailus.jpg" alt="Dailus cosméticos"
             fill priority className="object-cover object-top" />
-        </motion.div>
+        </m.div>
 
       </section>
     </>

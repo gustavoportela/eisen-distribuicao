@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { TIMELINE_EVENTS } from '@/lib/constants'
@@ -51,7 +51,7 @@ export function Fifteen() {
         <div className="grid lg:grid-cols-[1fr_420px] gap-16 lg:gap-24 items-start">
 
           {/* Coluna esquerda */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -112,10 +112,10 @@ export function Fifteen() {
             >
               Faça parte dessa história →
             </Link>
-          </motion.div>
+          </m.div>
 
           {/* Coluna direita — timeline */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -129,7 +129,7 @@ export function Fifteen() {
 
             <div className="flex flex-col">
               {TIMELINE_EVENTS.map((event, i) => (
-                <motion.div
+                <m.div
                   key={event.year}
                   initial={{ opacity: 0, x: 12 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -159,12 +159,12 @@ export function Fifteen() {
                   </span>
 
                   {event.year === '2026' && <Sparkle size={10} />}
-                </motion.div>
+                </m.div>
               ))}
             </div>
 
             {/* Card aniversário */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -186,8 +186,8 @@ export function Fifteen() {
               <div className="text-white/75 text-sm leading-relaxed">
                 25 de Julho de 2026. Quinze anos de parcerias, crescimento e presença em todo o Sul e SP.
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         </div>
       </div>
     </section>

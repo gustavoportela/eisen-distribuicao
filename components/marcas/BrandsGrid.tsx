@@ -2,7 +2,7 @@
 
 import { useState, memo } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 import { BRANDS, type Brand, type BrandState } from '@/lib/constants'
 
 /* ─── Per-logo calibrated heights (px) for visual harmony ───────────── */
@@ -54,7 +54,7 @@ function BrandCard({ brand }: { brand: Brand }) {
   const logoH = LOGO_H[brand.name] ?? DEFAULT_LOGO_H
 
   return (
-    <motion.div
+    <m.div
       layout
       variants={cardVariants}
       initial="idle"
@@ -79,7 +79,7 @@ function BrandCard({ brand }: { brand: Brand }) {
       </div>
 
       {/* Logo — move via variant propagation */}
-      <motion.div
+      <m.div
         variants={logoVariants}
         transition={{ duration: 0.2, ease: 'easeOut' }}
         className="absolute inset-0 flex flex-col items-center justify-center px-6"
@@ -93,14 +93,14 @@ function BrandCard({ brand }: { brand: Brand }) {
             className="object-contain brand-logo"
           />
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Bottom accent bar — CSS group-hover (GPU: scaleX) */}
       <div className="absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
         style={{ background: '#FFCC00' }} />
 
       {/* Hover CTA — variant propagation */}
-      <motion.div
+      <m.div
         variants={ctaVariants}
         transition={{ duration: 0.18, ease: 'easeOut' }}
         className="absolute bottom-0 left-0 right-0 flex justify-center pb-4 px-4"
@@ -113,8 +113,8 @@ function BrandCard({ brand }: { brand: Brand }) {
           <WhatsAppIcon />
           Quero distribuir
         </button>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   )
 }
 
@@ -152,7 +152,7 @@ function FilterPills({
 /* ─── Empty state ───────────────────────────────────────────────────── */
 function EmptyState() {
   return (
-    <motion.div
+    <m.div
       key="empty"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -164,7 +164,7 @@ function EmptyState() {
         Nenhuma marca neste estado ainda.
       </p>
       <p className="text-eisen-faint text-sm">Atualizando o portfólio.</p>
-    </motion.div>
+    </m.div>
   )
 }
 
@@ -189,7 +189,7 @@ export function BrandsGrid() {
         </div>
 
         {/* Grid */}
-        <motion.div layout className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <m.div layout className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <AnimatePresence mode="popLayout">
             {filtered.length > 0 ? (
               filtered.map((brand) => (
@@ -199,7 +199,7 @@ export function BrandsGrid() {
               <EmptyState key="empty" />
             )}
           </AnimatePresence>
-        </motion.div>
+        </m.div>
 
         <p className="mt-6 text-eisen-faint text-xs text-right">
           {filtered.length === BRANDS.length

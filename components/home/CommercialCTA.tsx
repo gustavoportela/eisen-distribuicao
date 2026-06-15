@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { StateSelector } from '@/components/ui/StateSelector'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -30,7 +30,7 @@ export function CommercialCTA() {
       <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
 
         {/* Pill chip eyebrow — yellow accent on dark */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -48,9 +48,9 @@ export function CommercialCTA() {
               Seja Cliente Eisen
             </span>
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.h2
+        <m.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -67,9 +67,9 @@ export function CommercialCTA() {
           Distribua marcas de{' '}
           <span style={{ color: '#FFC4DA' }}>desejo</span>
           <br />na sua região
-        </motion.h2>
+        </m.h2>
 
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -78,9 +78,9 @@ export function CommercialCTA() {
           style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.8 }}
         >
           Agilidade na entrega, portfólio premium e suporte presencial em cada estado.
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -88,7 +88,7 @@ export function CommercialCTA() {
           className="flex justify-center"
         >
           <StateSelector buttonSize="lg" />
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

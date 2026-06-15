@@ -1,22 +1,25 @@
 import type { Metadata } from 'next'
-import { Inter, Outfit, Libre_Caslon_Text, DM_Sans } from 'next/font/google'
+import { Inter, Outfit, DM_Sans } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 
+// Fonte principal do corpo — carrega apenas pesos usados
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600'],
   variable: '--font-inter',
   display: 'swap',
 })
 
+// Fonte de display (títulos, CTAs) — peso 400-800
 const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-outfit',
   display: 'swap',
 })
 
+// Fonte de interface (FAQ, cards) — pesos usados apenas
 const dmSans = DM_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
@@ -24,13 +27,7 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
-const libreCaslon = Libre_Caslon_Text({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-caslon',
-  display: 'swap',
-})
+// Libre Caslon removida — watermark do footer foi removida
 
 export const metadata: Metadata = {
   title: {
@@ -68,12 +65,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${outfit.variable} ${libreCaslon.variable} ${dmSans.variable} h-full`}>
+    <html lang="pt-BR" className={`${inter.variable} ${outfit.variable} ${dmSans.variable} h-full`}>
       <body className="min-h-full flex flex-col font-sans">
         {children}
       </body>
 
-      <Script id="meta-pixel" strategy="afterInteractive">
+      {/* Meta Pixel — lazyOnload: carrega após tudo, não bloqueia LCP/TBT */}
+      <Script id="meta-pixel" strategy="lazyOnload">
         {`
           !function(f,b,e,v,n,t,s){
             if(f.fbq)return;n=f.fbq=function(){n.callMethod?

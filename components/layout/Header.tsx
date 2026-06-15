@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const ctaVariants = {
   rest:  { scale: 1,    boxShadow: '0 2px 10px rgba(255,204,0,0.25)' },
@@ -101,7 +101,7 @@ export function Header() {
           </nav>
 
           {/* CTA desktop */}
-          <motion.div
+          <m.div
             className="hidden lg:block shrink-0"
             variants={ctaVariants}
             initial="rest"
@@ -125,7 +125,7 @@ export function Header() {
               }}
             >
               Quero ser cliente
-              <motion.span
+              <m.span
                 variants={arrowVariants}
                 transition={spring}
                 style={{ display: 'inline-flex', alignItems: 'center' }}
@@ -133,9 +133,9 @@ export function Header() {
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="#08084A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </motion.span>
+              </m.span>
             </Link>
-          </motion.div>
+          </m.div>
 
           {/* Hamburguer mobile */}
           <button

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { STATES } from '@/lib/constants'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -51,7 +51,7 @@ export function Geography() {
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="grid lg:grid-cols-[1fr_300px] items-end gap-10 mb-20">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -83,9 +83,9 @@ export function Geography() {
             >
               Operação em<br />quatro estados
             </h2>
-          </motion.div>
+          </m.div>
 
-          <motion.p
+          <m.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -94,7 +94,7 @@ export function Geography() {
             style={{ color: '#78787E', lineHeight: 1.75 }}
           >
             Expansão contínua com estrutura logística própria e equipe presencial em cada região.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* ── 4-column gap-px grid ────────────────────────────────────────── */}
@@ -103,7 +103,7 @@ export function Geography() {
           style={{ background: 'rgba(0,0,0,0.07)' }}
         >
           {STATES.map((state, i) => (
-            <motion.div
+            <m.div
               key={state.sigla}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -168,7 +168,7 @@ export function Geography() {
               <p className="text-xs leading-relaxed" style={{ color: '#78787E', lineHeight: 1.7 }}>
                 {state.detalhe}
               </p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect } from 'react'
-import { useMotionValue, useSpring, useInView, motion } from 'framer-motion'
+import { useMotionValue, useSpring, useInView, m } from 'framer-motion'
 
 function Counter({ value, suffix = '' }: { value: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null)
@@ -66,8 +66,8 @@ export function Numbers() {
     >
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-2 lg:grid-cols-4">
-          {METRICS.map((m, i) => (
-            <motion.div
+          {METRICS.map((metric, i) => (
+            <m.div
               key={i}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -95,20 +95,20 @@ export function Numbers() {
                   fontFamily: 'var(--font-display)',
                 }}
               >
-                {m.text ?? <Counter value={m.value!} suffix={m.suffix} />}
+                {metric.text ?? <Counter value={metric.value!} suffix={metric.suffix} />}
               </div>
 
               {/* Label + small icon */}
               <div className="flex items-center gap-2">
-                <span style={{ color: 'rgba(255,255,255,0.25)' }}>{m.icon}</span>
+                <span style={{ color: 'rgba(255,255,255,0.25)' }}>{metric.icon}</span>
                 <span
                   className="text-[10px] font-medium uppercase"
                   style={{ color: 'rgba(255,255,255,0.35)', letterSpacing: '0.15em' }}
                 >
-                  {m.label}
+                  {metric.label}
                 </span>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

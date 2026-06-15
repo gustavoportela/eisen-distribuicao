@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
 const FAQS = [
@@ -126,7 +126,7 @@ export function FAQ() {
                       transition: 'background 0.2s',
                     }}
                   >
-                    <motion.svg
+                    <m.svg
                       width="12"
                       height="12"
                       viewBox="0 0 12 12"
@@ -140,14 +140,14 @@ export function FAQ() {
                         strokeWidth="1.7"
                         strokeLinecap="round"
                       />
-                    </motion.svg>
+                    </m.svg>
                   </div>
                 </button>
 
                 {/* Answer */}
                 <AnimatePresence initial={false}>
                   {isOpen && (
-                    <motion.div
+                    <m.div
                       key="answer"
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
@@ -176,7 +176,7 @@ export function FAQ() {
                           {faq.a}
                         </p>
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>

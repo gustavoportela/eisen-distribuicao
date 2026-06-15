@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { DIFFERENTIALS } from '@/lib/constants'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -106,7 +106,7 @@ export function Differentials() {
 
         {/* ── Section header ─────────────────────────────────────────────── */}
         <div className="grid lg:grid-cols-[1fr_300px] items-end gap-10 mb-20">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
@@ -137,9 +137,9 @@ export function Differentials() {
             >
               Por que distribuidores<br />escolhem a Eisen
             </h2>
-          </motion.div>
+          </m.div>
 
-          <motion.p
+          <m.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -148,7 +148,7 @@ export function Differentials() {
             style={{ color: '#78787E', lineHeight: 1.75 }}
           >
             Uma parceria com suporte real,<br />marcas de desejo e operação própria.
-          </motion.p>
+          </m.p>
         </div>
 
         {/* ── 2×2 cards grid ─────────────────────────────────────────────── */}
@@ -156,7 +156,7 @@ export function Differentials() {
           {DIFFERENTIALS.map((item, i) => {
             const cfg = CARD_CONFIG[i]
             return (
-              <motion.div
+              <m.div
                 key={item.num}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -240,7 +240,7 @@ export function Differentials() {
                     borderRadius: 1,
                   }}
                 />
-              </motion.div>
+              </m.div>
             )
           })}
         </div>
