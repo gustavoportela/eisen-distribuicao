@@ -7,18 +7,20 @@ export interface Brand {
 }
 
 export const BRANDS: Brand[] = [
-  { name: 'Boticário',     logo: '/logos/boticario.svg',    states: ['RS', 'SC', 'PR', 'SP'] },
-  { name: 'Eudora',        logo: '/logos/eudora.svg',       states: ['RS', 'SC', 'PR'] },
-  { name: 'Quem Disse',    logo: '/logos/quemdisse.svg',    states: ['RS', 'SC', 'PR', 'SP'] },
-  { name: 'Vult',          logo: '/logos/vult.svg',         states: ['RS', 'SC', 'PR', 'SP'] },
-  { name: 'Avon',          logo: '/logos/avon.svg',         states: ['RS', 'SC', 'PR'] },
-  { name: 'Natura',        logo: '/logos/natura.svg',       states: ['RS', 'SC'] },
-  { name: 'Cia Beauty',    logo: '/logos/ciabeauty.webp',   states: ['RS'] },
-  { name: 'Wella',         logo: '/logos/wella.svg',        states: ['PR'] },
-  { name: "L'Oréal",       logo: '/logos/loreal.svg',       states: ['RS', 'SC', 'PR', 'SP'] },
-  { name: 'Revlon',        logo: '/logos/revlon.svg',       states: ['RS', 'SC', 'PR', 'SP'] },
-  { name: 'Koleston',      logo: '/logos/koleston.png',     states: ['RS', 'SC', 'PR'] },
-  { name: 'Pantene',       logo: '/logos/pantene.svg',      states: ['RS', 'SC', 'PR', 'SP'] },
+  { name: 'Dailus',           logo: '/logos/dailus.png',       states: ['RS'] },
+  { name: 'Wella',            logo: '/logos/wella-pro.png',    states: ['RS', 'SC', 'PR'] },
+  { name: 'Parfum Brasil',    logo: '/logos/parfum.png',       states: ['RS', 'SC', 'PR'] },
+  { name: 'Felps',            logo: '/logos/felps.png',        states: ['RS', 'SC', 'PR'] },
+  { name: 'Cia Beauty',       logo: '/logos/ciabeauty2.png',   states: ['RS'] },
+  { name: 'Top Beauty',       logo: '/logos/topbeauty.png',    states: ['RS', 'SC', 'PR'] },
+  { name: 'Avenca',           logo: '/logos/avenca.png',       states: ['RS', 'SC', 'PR'] },
+  { name: 'Blend',            logo: '/logos/blend.png',        states: ['RS', 'SC', 'PR'] },
+  { name: 'Phallebeauty',     logo: '/logos/phallebeauty.png', states: ['RS', 'SC', 'PR'] },
+  { name: 'Retrô',            logo: '/logos/retro.png',        states: ['RS', 'SC', 'PR'] },
+  { name: 'Ciranda Cultural', logo: '/logos/ciranda.png',      states: ['RS', 'SC'] },
+  { name: 'Happy Books',      logo: '/logos/happybooks.png',   states: ['RS', 'SC'] },
+  { name: 'Carmesim',         logo: '/logos/carmesim.png',     states: ['RS'] },
+  { name: 'Kids Zone',        logo: '/logos/kidszone.png',     states: ['RS'] },
 ]
 
 export interface StateInfo {
@@ -34,19 +36,19 @@ export const STATES: StateInfo[] = [
     sigla: 'RS',
     nome: 'Rio Grande do Sul',
     cidade: 'Santa Cruz do Sul',
-    detalhe: 'Centro de distribuição próprio',
+    detalhe: 'Matriz e CD próprio',
   },
   {
     sigla: 'SC',
     nome: 'Santa Catarina',
-    cidade: 'Blumenau',
-    detalhe: 'Atendimento presencial e remoto',
+    cidade: 'Içara',
+    detalhe: 'CD próprio e equipe presencial',
   },
   {
     sigla: 'PR',
     nome: 'Paraná',
     cidade: 'Curitiba',
-    detalhe: 'Time comercial dedicado',
+    detalhe: 'CD próprio e time comercial dedicado',
   },
   {
     sigla: 'SP',
@@ -58,10 +60,10 @@ export const STATES: StateInfo[] = [
 ]
 
 export const NUMBERS = [
-  { value: 15,   suffix: '',  label: 'Anos de mercado' },
-  { value: 4,    suffix: '',  label: 'Estados de atuação' },
-  { value: 1,    suffix: '',  label: 'CD próprio', isText: true, textValue: 'CD\nPróprio' },
-  { value: 500,  suffix: '+', label: 'Clientes ativos' },
+  { value: 15,    suffix: '',     label: 'Anos de mercado' },
+  { value: 4,     suffix: '',     label: 'Estados de atuação' },
+  { value: 1,     suffix: '',     label: 'CD próprio', isText: true, textValue: 'CD\nPróprio' },
+  { value: 15000, suffix: '+',    label: 'Clientes atendidos', isText: true, textValue: '+15 mil' },
 ]
 
 export const DIFFERENTIALS = [
@@ -88,10 +90,10 @@ export const DIFFERENTIALS = [
 ]
 
 export const TIMELINE_EVENTS = [
-  { year: '2011', label: 'Fundação' },
-  { year: '2013', label: 'Expansão SC' },
-  { year: '2016', label: 'CD próprio' },
-  { year: '2019', label: 'Expansão PR' },
-  { year: '2023', label: 'Chegada em SP' },
-  { year: '2026', label: '15 Anos' },
+  { year: '2011', label: 'Fundação', detail: '25 de Julho' },
+  { year: '2018', label: 'Sede SCdS', detail: 'Santa Cruz do Sul' },
+  { year: '2019', label: 'Filial SC', detail: 'Santa Catarina' },
+  { year: '2021', label: 'Filial PR', detail: 'Paraná' },
+  { year: '2025', label: 'Filial SP', detail: 'São Paulo' },
+  { year: '2026', label: '15 Anos', detail: 'De história' },
 ]

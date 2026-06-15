@@ -10,9 +10,12 @@ function Counter({ value, suffix = '' }: { value: number; suffix?: string }) {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   useEffect(() => { if (inView) mv.set(value) }, [inView, mv, value])
-  useEffect(() => spring.on('change', (v) => {
-    if (ref.current) ref.current.textContent = `${Math.round(v)}${suffix}`
-  }), [spring, suffix])
+  useEffect(() => {
+    // spring.on() retorna unsubscribe — crucial para evitar memory leak
+    return spring.on('change', (v) => {
+      if (ref.current) ref.current.textContent = `${Math.round(v)}${suffix}`
+    })
+  }, [spring, suffix])
 
   return <span ref={ref}>0{suffix}</span>
 }

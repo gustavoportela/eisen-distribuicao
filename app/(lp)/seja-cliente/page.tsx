@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { Diamond } from '@/components/ui/Diamond'
 import { StateSelector } from '@/components/ui/StateSelector'
-import { LpHeader } from '@/components/layout/LpHeader'
 
 const BRANDS = [
   { name: 'O Boticário', abbr: 'Boticário' },
@@ -75,7 +74,6 @@ export default function SejaClientePage() {
   return (
     <div className="min-h-screen">
 
-      <LpHeader />
 
       {/* ── Hero ────────────────────────────────────────────────────────── */}
       <section className="grain relative overflow-hidden"

@@ -38,15 +38,15 @@ const METRICS = [
   { value: '15', suffix: 'anos', label: 'de mercado' },
   { value: '4',  suffix: 'estados', label: 'de atuação' },
   { value: 'CD', suffix: 'próprio', label: 'Centro de distribuição' },
-  { value: '500+', suffix: 'clientes', label: 'ativos' },
+  { value: '+15 mil', suffix: 'clientes', label: 'atendidos' },
 ]
 
 const TIMELINE = [
-  { year: '2011', label: 'Fundação', desc: 'A Eisen nasce em Santa Cruz do Sul, RS, com foco em distribuição de cosméticos.' },
-  { year: '2013', label: 'Expansão para SC', desc: 'Início das operações em Santa Catarina, com equipe comercial dedicada em Blumenau.' },
-  { year: '2016', label: 'Centro de distribuição próprio', desc: 'Inauguração do CD próprio no RS, ampliando agilidade logística e rastreabilidade.' },
-  { year: '2019', label: 'Expansão para PR', desc: 'Chegada ao Paraná com time presencial e portfólio completo para o mercado curitibano.' },
-  { year: '2023', label: 'Chegada em SP', desc: 'Entrada no maior mercado do país, São Paulo, consolidando a presença nacional.' },
+  { year: '2011', label: 'Fundação', desc: 'A Eisen nasce em 25 de Julho em Santa Cruz do Sul, RS, com foco em distribuição de cosméticos.' },
+  { year: '2018', label: 'Sede Santa Cruz do Sul', desc: 'Consolidação da sede e estrutura logística própria em Santa Cruz do Sul.' },
+  { year: '2019', label: 'Filial SC', desc: 'Início das operações em Santa Catarina, com CD próprio em Içara e equipe dedicada.' },
+  { year: '2021', label: 'Filial PR', desc: 'Chegada ao Paraná com CD próprio em Curitiba e time presencial dedicado.' },
+  { year: '2025', label: 'Filial SP', desc: 'Entrada no maior mercado do país, São Paulo, consolidando a presença nacional.' },
   { year: '2026', label: '15 anos de história', desc: 'Uma trajetória de aprendizado, parcerias sólidas e crescimento consistente.' },
 ]
 

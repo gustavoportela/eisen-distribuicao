@@ -110,9 +110,43 @@
   /* ─── MARQUEE ─── */
   .animate-marquee {
     animation: marquee 40s linear infinite;
+    will-change: transform;
   }
   .animate-marquee-reverse {
     animation: marquee-reverse 44s linear infinite;
+    will-change: transform;
+  }
+
+  /* ─── NAV LINKS — hover via CSS (sem DOM manipulation) ─── */
+  .nav-link {
+    color: rgba(8, 8, 74, 0.65);
+  }
+  .nav-link:hover {
+    color: #08084A;
+  }
+
+  /* ─── PERFORMANCE — isola repaints por seção ─── */
+  .section-contain {
+    contain: layout style;
+  }
+
+  /* content-visibility removido — causava glitches de render em alguns browsers */
+
+  /* ─── BRAND CARD — hover via CSS (sem useState) ─── */
+  .brand-card {
+    border: 1.5px solid #EAEDF4;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .brand-card:hover {
+    border-color: #FFCC00;
+    box-shadow: 0 2px 8px rgba(0, 0, 102, 0.06);
+  }
+  .brand-logo {
+    opacity: 0.85;
+    transition: opacity 0.25s ease;
+  }
+  .brand-card:hover .brand-logo {
+    opacity: 1;
   }
 }
 
@@ -125,3 +159,35 @@
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
 }
+
+/* Badge rotations — GPU only, zero JS */
+@keyframes spin-ccw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+@keyframes spin-cw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Hero entrance — replaces Framer Motion on critical path */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.72); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-badge    { animation: scale-in 0.55s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+.animate-h1       { animation: fade-up  0.65s cubic-bezier(0.22,1,0.36,1) 0.0s both; }
+.animate-para     { animation: fade-in  0.60s cubic-bezier(0.22,1,0.36,1) 0.1s both; }
+.animate-cta      { animation: fade-in  0.50s cubic-bezier(0.22,1,0.36,1) 0.18s both; }
+.animate-stats    { animation: fade-in  0.50s cubic-bezier(0.22,1,0.36,1) 0.28s both; }
+.animate-card-1   { animation: fade-up  0.80s cubic-bezier(0.22,1,0.36,1) 0.22s both; }
+.animate-card-2   { animation: fade-up  0.80s cubic-bezier(0.22,1,0.36,1) 0.34s both; }

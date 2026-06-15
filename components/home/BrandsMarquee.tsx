@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { BRANDS } from '@/lib/constants'
 
 /* Split brands into two rows for the dual marquee */
-const ROW_1 = BRANDS.slice(0, 6)   // Boticário Eudora QDB Vult Avon Natura
-const ROW_2 = BRANDS.slice(6)      // Cia Beauty Wella L'Oréal Revlon Koleston Pantene
+const ROW_1 = BRANDS.slice(0, 7)   // Dailus Wella Parfum Felps CiaBeauty TopBeauty Avenca
+const ROW_2 = BRANDS.slice(7)      // Blend Phallebeauty Retrô Ciranda HappyBooks Carmesim KidsZone
 
 /**
  * Per-logo calibrated dimensions for visual harmony.
@@ -12,20 +12,22 @@ const ROW_2 = BRANDS.slice(6)      // Cia Beauty Wella L'Oréal Revlon Koleston 
  * despite very different natural aspect ratios.
  */
 const LOGO_SIZES: Record<string, { w: number; h: number }> = {
-  'Boticário':  { w: 130, h: 17 },   // 7.68:1  — extra-wide thin wordmark
-  'Koleston':   { w: 112, h: 17 },   // 6.6:1   — wide script wordmark
-  "L'Oréal":   { w: 106, h: 19 },   // 5.53:1  — condensed cap wordmark
-  'Revlon':     { w: 108, h: 19 },   // 5.67:1  — bold cap wordmark
-  'Pantene':    { w: 104, h: 19 },   // 5.46:1  — wide italic wordmark
-  'Avon':       { w: 92,  h: 20 },   // 4.51:1  — heavy caps wordmark
-  'Quem Disse': { w: 88,  h: 23 },   // 3.84:1  — mixed case wordmark
-  'Vult':       { w: 72,  h: 25 },   // 2.92:1  — compact wordmark
-  'Eudora':     { w: 82,  h: 33 },   // 2.47:1  — upright wordmark
-  'Wella':      { w: 50,  h: 28 },   // 1.79:1  — compact bold mark
-  'Natura':     { w: 70,  h: 70 },   // 1:1     — icon/badge
-  'Cia Beauty': { w: 44,  h: 44 },   // 1:1     — icon/badge
+  'Ciranda Cultural': { w: 120, h: 22 },
+  'Happy Books':      { w: 108, h: 24 },
+  'Top Beauty':       { w: 105, h: 28 },
+  'Parfum Brasil':    { w: 100, h: 32 },
+  'Felps':            { w:  96, h: 28 },
+  'Blend':            { w:  96, h: 32 },
+  'Avenca':           { w:  96, h: 28 },
+  'Wella':            { w:  90, h: 34 },
+  'Retrô':            { w:  82, h: 36 },
+  'Dailus':           { w:  80, h: 36 },
+  'Phallebeauty':     { w:  76, h: 40 },
+  'Kids Zone':        { w:  72, h: 40 },
+  'Carmesim':         { w:  72, h: 36 },
+  'Cia Beauty':       { w:  56, h: 48 },
 }
-const DEFAULT_SIZE = { w: 90, h: 22 }
+const DEFAULT_SIZE = { w: 90, h: 32 }
 
 function BrandItem({ name, logo }: { name: string; logo: string }) {
   const { w, h } = LOGO_SIZES[name] ?? DEFAULT_SIZE
@@ -55,6 +57,7 @@ function MarqueeRow({ items, reverse = false, speed = 40 }: { items: typeof BRAN
         className="flex shrink-0"
         style={{
           animation: `${reverse ? 'marquee-reverse' : 'marquee'} ${speed}s linear infinite`,
+          willChange: 'transform',
         }}
       >
         {quadruple.map((brand, i) => (
@@ -67,7 +70,7 @@ function MarqueeRow({ items, reverse = false, speed = 40 }: { items: typeof BRAN
 
 export function BrandsMarquee() {
   return (
-    <section className="relative py-28 overflow-hidden" style={{ backgroundColor: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+    <section className="relative py-28 overflow-hidden section-contain" style={{ backgroundColor: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
       {/* Ultra-faint dot grid background */}
       <div className="absolute inset-0 pointer-events-none" style={{
         backgroundImage: 'radial-gradient(circle, rgba(0,0,102,0.035) 1px, transparent 1px)',

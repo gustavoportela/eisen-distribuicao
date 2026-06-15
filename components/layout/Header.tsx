@@ -19,6 +19,7 @@ const arrowVariants = {
 const spring = { type: 'spring', stiffness: 380, damping: 28 } as const
 
 const NAV_LINKS = [
+  { href: '/',                 label: 'Home' },
   { href: '/sobre',            label: 'Sobre' },
   { href: '/marcas',           label: 'Marcas' },
   { href: '/seja-cliente',     label: 'Seja cliente' },
@@ -31,9 +32,16 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
+    let rafId: number
+    const handleScroll = () => {
+      cancelAnimationFrame(rafId)
+      rafId = requestAnimationFrame(() => setScrolled(window.scrollY > 20))
+    }
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      cancelAnimationFrame(rafId)
+    }
   }, [])
 
   useEffect(() => {
@@ -80,15 +88,12 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="transition-colors duration-150 px-4 py-2 rounded-full hover:bg-black/5"
+                className="nav-link transition-colors duration-150 px-4 py-2 rounded-full hover:bg-black/5"
                 style={{
                   fontSize: '0.875rem',
                   fontWeight: 400,
-                  color: 'rgba(8,8,74,0.65)',
                   letterSpacing: '0.005em',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.color = '#08084A')}
-                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(8,8,74,0.65)')}
               >
                 {link.label}
               </Link>

@@ -32,7 +32,7 @@ const STATE_ICON_COLOR: Record<string, string> = {
 export function Geography() {
   return (
     <section
-      className="relative py-32 overflow-hidden"
+      className="relative py-32 overflow-hidden section-contain"
       style={{ backgroundColor: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)' }}
     >
       {/* ── Subtle background depth ─────────────────────────────────────── */}

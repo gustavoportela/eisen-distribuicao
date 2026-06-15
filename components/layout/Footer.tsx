@@ -47,7 +47,7 @@ export function Footer() {
           </div>
 
           {/* Columns */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-10 gap-y-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
 
             {/* Empresa */}
             <div>
@@ -186,28 +186,6 @@ export function Footer() {
 
       </div>
 
-      {/* ── Watermark — Libre Caslon Italic ─────────────────────────────── */}
-      <div
-        className="overflow-hidden select-none pointer-events-none"
-        style={{ borderTop: '1px solid rgba(0,0,0,0.055)' }}
-      >
-        <p
-          style={{
-            fontFamily: 'var(--font-caslon)',
-            fontSize: 'clamp(5rem, 15vw, 14rem)',
-            fontWeight: 400,
-            fontStyle: 'italic',
-            lineHeight: 0.82,
-            letterSpacing: '-0.02em',
-            color: 'rgba(0,0,0,0.052)',
-            paddingLeft: 'clamp(20px, 4vw, 56px)',
-            paddingBottom: 'clamp(8px, 1.5vw, 20px)',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          Eisen Distribuição
-        </p>
-      </div>
 
     </footer>
   )

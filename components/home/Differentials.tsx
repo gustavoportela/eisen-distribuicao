@@ -65,7 +65,7 @@ const CARD_CONFIG = [
 
 export function Differentials() {
   return (
-    <section className="relative py-32 overflow-hidden" style={{ backgroundColor: '#F4F4F8' }}>
+    <section className="relative py-32 overflow-hidden section-contain" style={{ backgroundColor: '#F4F4F8' }}>
 
       {/* ── Grid de linhas diagonais cruzadas ───────────────────────────── */}
       <div className="absolute inset-0 pointer-events-none" style={{
@@ -152,7 +152,7 @@ export function Differentials() {
         </div>
 
         {/* ── 2×2 cards grid ─────────────────────────────────────────────── */}
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {DIFFERENTIALS.map((item, i) => {
             const cfg = CARD_CONFIG[i]
             return (
@@ -167,9 +167,8 @@ export function Differentials() {
                   boxShadow: `0 0 0 1.5px ${cfg.accent}, 0 16px 48px rgba(0,0,0,0.07)`,
                   transition: spring,
                 }}
-                className="relative bg-white cursor-default"
+                className="relative bg-white cursor-default p-7 sm:p-10 lg:p-[40px_44px_48px]"
                 style={{
-                  padding: '40px 44px 48px',
                   borderRadius: '14px',
                   boxShadow: '0 0 0 1.5px rgba(0,0,102,0.08)',
                 }}

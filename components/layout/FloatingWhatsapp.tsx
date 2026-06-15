@@ -16,10 +16,10 @@ export function FloatingWhatsapp() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 lg:hidden flex flex-col items-end gap-3">
+    <div className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40 lg:hidden flex flex-col items-end gap-3">
       {/* Painel */}
       {open && (
-        <div className="bg-eisen-navy border border-white/10 rounded-xl p-5 shadow-2xl w-72">
+        <div className="bg-eisen-navy border border-white/10 rounded-xl p-5 shadow-2xl w-[min(288px,calc(100vw-2rem))]">
           <p className="text-white text-sm font-semibold mb-3">Fale com o comercial</p>
           <div className="flex gap-2 flex-wrap mb-4">
             {(Object.keys(WHATSAPP) as State[]).map((state) => (

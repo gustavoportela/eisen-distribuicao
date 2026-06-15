@@ -98,7 +98,7 @@ export function Fifteen() {
             </p>
 
             <p className="text-white/75 leading-[1.85] mb-10 max-w-[440px]" style={{ fontSize: '0.9375rem' }}>
-              Em 2026, completamos 15 anos presentes em quatro estados, mantendo o mesmo compromisso
+              Em 25 de Julho de 2026, completamos 15 anos presentes em quatro estados, mantendo o mesmo compromisso
               de sempre: fazer o certo, entregar com qualidade e evoluir todos os dias.
             </p>
 
@@ -184,7 +184,7 @@ export function Fifteen() {
                 </span>
               </div>
               <div className="text-white/75 text-sm leading-relaxed">
-                Junho de 2026. Quinze anos de parcerias, crescimento e presença em todo o Sul e SP.
+                25 de Julho de 2026. Quinze anos de parcerias, crescimento e presença em todo o Sul e SP.
               </div>
             </motion.div>
           </motion.div>

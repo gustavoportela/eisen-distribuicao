@@ -3,7 +3,6 @@ import Script from 'next/script'
 import Image from 'next/image'
 import { Diamond } from '@/components/ui/Diamond'
 import { StateSelector } from '@/components/ui/StateSelector'
-import { LpHeader } from '@/components/layout/LpHeader'
 
 export const metadata: Metadata = {
   title: 'Seja um Revendedor Eisen | Distribuição de Beleza',
@@ -81,7 +80,6 @@ export default function LpSejaRevendedorPage() {
 
       <div className="min-h-screen">
 
-        <LpHeader />
 
         {/* ── Hero ──────────────────────────────────────────────────────── */}
         <section

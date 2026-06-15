@@ -11,15 +11,15 @@ const FAQS = [
   },
   {
     q: 'Quais estados a Eisen atende?',
-    a: 'Atendemos Rio Grande do Sul (CD próprio em Santa Cruz do Sul), Santa Catarina (Blumenau), Paraná (Curitiba) e São Paulo. Nossa operação é presencial em todas as regiões com equipe dedicada.',
+    a: 'Atendemos Rio Grande do Sul (Matriz e CD próprio em Santa Cruz do Sul), Santa Catarina (CD próprio em Içara), Paraná (CD próprio em Curitiba) e São Paulo. Nossa operação é online e também presencial em todas as regiões com equipe dedicada.',
   },
   {
     q: 'A Eisen possui centro de distribuição próprio?',
-    a: 'Sim. Operamos com CD próprio no RS, o que garante agilidade, rastreabilidade e controle de qualidade em todos os pedidos. Isso nos diferencia de distribuidoras que terceirizam a logística.',
+    a: 'Sim. Operamos com CD próprio no RS, SC e PR, o que garante agilidade, rastreabilidade e controle de qualidade em todos os pedidos. Isso nos diferencia de distribuidoras que terceirizam a logística.',
   },
   {
     q: 'Quais marcas fazem parte do portfólio?',
-    a: "Trabalhamos com marcas de alto reconhecimento como O Boticário, Eudora, Quem Disse Berenice, Vult, Avon, Natura, Cia Beauty, Wella, L'Oréal, Revlon, Koleston e Pantene. Portfólio em constante expansão.",
+    a: 'Trabalhamos com marcas de alto reconhecimento como Dailus, Wella Professionals, Parfum Brasil, Felps, CB Cia Beauty, Top Beauty, Avenca, Blend, Phallebeauty, Retrô, Ciranda Cultural, Happy Books, Carmesim e Kids Zone. Portfólio em constante expansão.',
   },
   {
     q: 'Como funciona o suporte da equipe comercial?',
@@ -27,7 +27,7 @@ const FAQS = [
   },
   {
     q: 'Qual o prazo médio de entrega dos pedidos?',
-    a: 'Os prazos variam conforme a região e volume do pedido. No Sul, entregamos com agilidade graças ao CD próprio. Nossa equipe informa o prazo exato no momento do fechamento.',
+    a: 'Os prazos variam conforme a região e volume do pedido. Entregamos com agilidade graças aos nossos CDs próprios. Nossa equipe informa o prazo exato no momento do fechamento.',
   },
 ]
 

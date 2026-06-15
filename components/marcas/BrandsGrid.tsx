@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BRANDS, type Brand, type BrandState } from '@/lib/constants'
@@ -25,7 +25,7 @@ const DEFAULT_LOGO_H = 32
 /* ─── Types ─────────────────────────────────────────────────────────── */
 type Filter = 'Todos' | BrandState
 
-const FILTERS: Filter[] = ['Todos', 'RS', 'SC', 'PR', 'SP']
+const FILTERS: Filter[] = ['Todos', 'RS', 'SC', 'PR']
 
 /* ─── WhatsApp helper ───────────────────────────────────────────────── */
 function openWhatsApp(marca: string) {
@@ -34,28 +34,36 @@ function openWhatsApp(marca: string) {
   window.open(link, '_blank')
 }
 
-/* ─── BrandCard ─────────────────────────────────────────────────────── */
+/* ─── Variants — definidos fora do componente, não recriados por render ─ */
+const cardVariants = {
+  idle:    { opacity: 0, scale: 0.96 },
+  visible: { opacity: 1, scale: 1 },
+  exit:    { opacity: 0, scale: 0.94 },
+}
+const logoVariants = {
+  rest:    { y: 0 },
+  hovered: { y: -8 },
+}
+const ctaVariants = {
+  rest:    { opacity: 0, y: 8 },
+  hovered: { opacity: 1, y: 0 },
+}
+
+/* ─── BrandCard — sem useState, hover via Framer variants + CSS ─────── */
 function BrandCard({ brand }: { brand: Brand }) {
-  const [hovered, setHovered] = useState(false)
+  const logoH = LOGO_H[brand.name] ?? DEFAULT_LOGO_H
 
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, scale: 0.96 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.94 }}
+      variants={cardVariants}
+      initial="idle"
+      animate="visible"
+      exit="exit"
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-      className="relative bg-white rounded-2xl overflow-hidden cursor-pointer group"
-      style={{
-        aspectRatio: '3/2',
-        border: hovered ? '1.5px solid #FFCC00' : '1.5px solid #EAEDF4',
-        transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
-        boxShadow: hovered
-          ? '0 2px 8px rgba(0,0,102,0.06)'
-          : 'none',
-      }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      whileHover="hovered"
+      className="brand-card relative bg-white rounded-2xl overflow-hidden cursor-pointer group"
+      style={{ aspectRatio: '3/2' }}
     >
       {/* State badges — top right */}
       <div className="absolute top-3 right-3 z-10 flex flex-wrap gap-1 justify-end max-w-[60%]">
@@ -70,40 +78,32 @@ function BrandCard({ brand }: { brand: Brand }) {
         ))}
       </div>
 
-      {/* Logo — centered, calibrated height per brand */}
-      {(() => {
-        const logoH = LOGO_H[brand.name] ?? DEFAULT_LOGO_H
-        return (
-          <div
-            className="absolute inset-0 flex flex-col items-center justify-center px-6 transition-transform duration-200"
-            style={{ transform: hovered ? 'translateY(-8px)' : 'translateY(0)' }}
-          >
-            <div className="relative flex items-center justify-center w-full" style={{ height: `${logoH}px` }}>
-              <Image
-                src={brand.logo}
-                alt={brand.name}
-                fill
-                sizes="(max-width: 768px) 45vw, 22vw"
-                className="object-contain"
-                style={{ opacity: hovered ? 1 : 0.85, transition: 'all 0.25s ease' }}
-              />
-            </div>
-          </div>
-        )
-      })()}
-
-      {/* Bottom accent bar on hover */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-0.5 transition-transform duration-300 origin-left"
-        style={{ background: '#FFCC00', transform: hovered ? 'scaleX(1)' : 'scaleX(0)' }}
-      />
-
-      {/* Hover CTA */}
+      {/* Logo — move via variant propagation */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 flex justify-center pb-4 px-4"
-        initial={false}
-        animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 8 }}
+        variants={logoVariants}
+        transition={{ duration: 0.2, ease: 'easeOut' }}
+        className="absolute inset-0 flex flex-col items-center justify-center px-6"
+      >
+        <div className="relative flex items-center justify-center w-full" style={{ height: `${logoH}px` }}>
+          <Image
+            src={brand.logo}
+            alt={brand.name}
+            fill
+            sizes="(max-width: 768px) 45vw, 22vw"
+            className="object-contain brand-logo"
+          />
+        </div>
+      </motion.div>
+
+      {/* Bottom accent bar — CSS group-hover (GPU: scaleX) */}
+      <div className="absolute bottom-0 left-0 right-0 h-0.5 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+        style={{ background: '#FFCC00' }} />
+
+      {/* Hover CTA — variant propagation */}
+      <motion.div
+        variants={ctaVariants}
         transition={{ duration: 0.18, ease: 'easeOut' }}
+        className="absolute bottom-0 left-0 right-0 flex justify-center pb-4 px-4"
       >
         <button
           onClick={() => openWhatsApp(brand.name)}
