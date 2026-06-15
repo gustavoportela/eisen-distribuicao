@@ -4,6 +4,7 @@ import { Diamond } from '@/components/ui/Diamond'
 import { StateSelector } from '@/components/ui/StateSelector'
 import { STATES } from '@/lib/constants'
 import { SobreAnimations } from './SobreAnimations'
+import { MissaoCard } from './MissaoCard'
 
 export const metadata: Metadata = {
   title: 'Sobre a Eisen',
@@ -122,41 +123,7 @@ export default function SobrePage() {
             </SobreAnimations>
 
             <SobreAnimations variant="fadeUp" delay={0.1}>
-              <div className="relative h-80 lg:h-96">
-                <div
-                  className="absolute top-0 right-0 w-[88%] h-full rounded-2xl"
-                  style={{
-                    background: 'linear-gradient(140deg, #001580 0%, #0044F0 100%)',
-                    border: '1px solid rgba(255,196,218,0.18)',
-                  }}
-                >
-                  <div className="p-8 h-full flex flex-col justify-end">
-                    <Diamond size="md" color="pink" className="mb-4" />
-                    <p className="text-white/85 text-sm leading-relaxed">
-                      "Fazer o certo, entregar com qualidade e evoluir todos os dias: esse
-                      é o nosso compromisso desde a fundação."
-                    </p>
-                  </div>
-                </div>
-                <div
-                  className="absolute bottom-0 left-0 w-[78%] rounded-2xl z-10"
-                  style={{
-                    background: '#000066',
-                    border: '1px solid rgba(255,196,218,0.28)',
-                    boxShadow: '0 20px 60px rgba(0,0,40,0.5)',
-                  }}
-                >
-                  <div className="p-7">
-                    <span className="text-eisen-yellow text-xs font-bold uppercase tracking-widest block mb-3">
-                      Missão
-                    </span>
-                    <p className="text-white font-semibold text-base leading-snug">
-                      Conectar marcas de desejo aos pontos de venda com excelência, ética e
-                      relacionamento verdadeiro.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <MissaoCard />
             </SobreAnimations>
           </div>
         </div>
