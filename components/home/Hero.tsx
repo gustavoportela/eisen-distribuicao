@@ -29,7 +29,7 @@ export function Hero() {
       <section className="lg:hidden relative flex flex-col justify-end" style={{ minHeight: '100svh' }}>
 
         <Image
-          src="/brand/banco-dailus.jpg"
+          src="/brand/dailus.jpg"
           alt="Marcas Eisen Distribuição"
           fill
           priority
@@ -264,7 +264,7 @@ export function Hero() {
           }}
           whileHover={{ y: -6, scale: 1.022, boxShadow: '0 10px 36px rgba(0,0,0,0.14)', transition: spring }}
         >
-          <Image src="/brand/banco-dailus.jpg" alt="Dailus cosméticos"
+          <Image src="/brand/dailus.jpg" alt="Dailus cosméticos"
             fill priority className="object-cover object-top" />
         </m.div>
 
