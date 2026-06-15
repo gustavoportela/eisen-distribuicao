@@ -43,7 +43,7 @@ const METRICS = [
 
 const TIMELINE = [
   { year: '2011', label: 'Fundação', desc: 'A Eisen nasce em 25 de Julho em Santa Cruz do Sul, RS, com foco em distribuição de cosméticos.' },
-  { year: '2018', label: 'Sede Santa Cruz do Sul', desc: 'Consolidação da sede e estrutura logística própria em Santa Cruz do Sul.' },
+  { year: '2018', label: 'Nova Matriz', desc: 'Consolidação da nova matriz e estrutura logística própria em Santa Cruz do Sul.' },
   { year: '2019', label: 'Filial SC', desc: 'Início das operações em Santa Catarina, com CD próprio em Içara e equipe dedicada.' },
   { year: '2021', label: 'Filial PR', desc: 'Chegada ao Paraná com CD próprio em Curitiba e time presencial dedicado.' },
   { year: '2025', label: 'Filial SP', desc: 'Entrada no maior mercado do país, São Paulo, consolidando a presença nacional.' },

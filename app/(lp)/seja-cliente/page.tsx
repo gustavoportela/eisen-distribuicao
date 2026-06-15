@@ -103,7 +103,7 @@ export default function SejaClientePage() {
 
           <h1 className="text-white max-w-3xl mb-6"
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 600, lineHeight: 1.05, letterSpacing: '-0.03em' }}>
-            Distribua as marcas que seus clientes já{' '}
+            Venda as marcas que seus clientes já{' '}
             <span style={{ color: '#FFCC00' }}>conhecem e pedem</span>
           </h1>
 

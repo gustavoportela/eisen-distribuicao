@@ -111,7 +111,7 @@ function BrandCard({ brand }: { brand: Brand }) {
           style={{ background: '#000066' }}
         >
           <WhatsAppIcon />
-          Quero distribuir
+          Quero comprar
         </button>
       </m.div>
     </m.div>

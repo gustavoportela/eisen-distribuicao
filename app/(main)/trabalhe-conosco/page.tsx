@@ -19,7 +19,7 @@ const PILARES = [
       </svg>
     ),
     title: 'Resultado',
-    desc: 'Metas claras, comissionamento agressivo e reconhecimento real por performance. Aqui quem entrega, cresce.',
+    desc: 'Metas claras e reconhecimento real por performance. Aqui quem entrega, cresce.',
     accent: '#FFCC00',
     iconBg: 'rgba(255,204,0,0.12)',
     iconColor: '#8A6A00',
@@ -48,7 +48,7 @@ const PILARES = [
       </svg>
     ),
     title: 'Crescimento',
-    desc: 'Treinamentos, plano de carreira e evolução contínua. Em 15 anos de mercado, formamos líderes de dentro para fora.',
+    desc: 'Treinamentos e evolução contínua. Em 15 anos de mercado, formamos líderes de dentro para fora.',
     accent: '#000066',
     iconBg: 'rgba(0,0,102,0.08)',
     iconColor: '#000066',

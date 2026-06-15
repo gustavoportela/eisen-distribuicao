@@ -33,7 +33,8 @@ export function Hero() {
           alt="Marcas Eisen Distribuição"
           fill
           priority
-          className="object-cover object-top"
+          className="object-cover"
+          style={{ objectPosition: 'center 8%' }}
         />
 
         <div className="absolute inset-0" style={{

@@ -1,5 +1,5 @@
 export const WHATSAPP = {
-  RS: { number: '5551998775111', label: 'Rio Grande do Sul', city: 'Santa Cruz do Sul' },
+  RS: { number: '5551999953219', label: 'Rio Grande do Sul', city: 'Santa Cruz do Sul' },
   SC: { number: '5551992536292', label: 'Santa Catarina',    city: 'Içara' },
   PR: { number: '5541988300098', label: 'Paraná',            city: 'Curitiba' },
 } as const

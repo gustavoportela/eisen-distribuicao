@@ -91,7 +91,7 @@ export const DIFFERENTIALS = [
 
 export const TIMELINE_EVENTS = [
   { year: '2011', label: 'Fundação', detail: '25 de Julho' },
-  { year: '2018', label: 'Sede SCdS', detail: 'Santa Cruz do Sul' },
+  { year: '2018', label: 'Nova Matriz', detail: 'Santa Cruz do Sul' },
   { year: '2019', label: 'Filial SC', detail: 'Santa Catarina' },
   { year: '2021', label: 'Filial PR', detail: 'Paraná' },
   { year: '2025', label: 'Filial SP', detail: 'São Paulo' },

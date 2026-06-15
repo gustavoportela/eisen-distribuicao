@@ -64,7 +64,7 @@ export function CommercialCTA() {
             fontFamily: 'var(--font-display)',
           }}
         >
-          Distribua marcas de{' '}
+          Venda marcas de{' '}
           <span style={{ color: '#FFC4DA' }}>desejo</span>
           <br />na sua região
         </m.h2>
