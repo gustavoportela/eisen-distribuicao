@@ -11,12 +11,14 @@ const CARD_CONFIG = [
   /* 01 — Marcas de renome */
   {
     accent: '#FFCC00',
-    iconBg: 'rgba(255,204,0,0.14)',
-    iconColor: '#9A7200',
+    iconBg: 'rgba(255,204,0,0.12)',
+    iconColor: '#8A6000',
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2L13.09 9.26L20 12L13.09 14.74L12 22L10.91 14.74L4 12L10.91 9.26L12 2Z"/>
-        <circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" opacity="0.3"/>
+      /* Caixa com estrela / produto premium */
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 2 3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
       </svg>
     ),
   },
@@ -26,38 +28,34 @@ const CARD_CONFIG = [
     iconBg: 'rgba(0,0,102,0.08)',
     iconColor: '#000066',
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M1 3h15a1 1 0 011 1v9H1V3z"/>
-        <path d="M17 8h3.5L23 12v5h-6V8z"/>
-        <circle cx="5.5" cy="18.5" r="2.5"/>
-        <circle cx="18.5" cy="18.5" r="2.5"/>
-        <path d="M8 18.5h7"/>
+      /* Armazém / warehouse */
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"/>
+        <path d="M9 21V12h6v9"/>
       </svg>
     ),
   },
   /* 03 — Atendimento presencial */
   {
     accent: '#FFC4DA',
-    iconBg: 'rgba(255,196,218,0.22)',
+    iconBg: 'rgba(255,196,218,0.18)',
     iconColor: '#8C2252',
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M23 21v-2a4 4 0 00-3-3.87"/>
-        <path d="M16 3.13a4 4 0 010 7.75"/>
+      /* Handshake — parceria */
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 7.65l.77.79L12 21l7.65-8.08.77-.79a5.4 5.4 0 000-7.55z"/>
       </svg>
     ),
   },
-  /* 04 — Promotoria & crescimento */
+  /* 04 — Promotoria & benefícios */
   {
     accent: '#FFCC00',
     iconBg: 'rgba(0,0,102,0.08)',
     iconColor: '#000066',
     icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
-        <polyline points="16 7 22 7 22 13"/>
+      /* Megafone / promoção */
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 11l19-9-9 19-2-8-8-2z"/>
       </svg>
     ),
   },
