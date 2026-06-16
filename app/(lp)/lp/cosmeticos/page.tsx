@@ -3,28 +3,22 @@ import Image from 'next/image'
 import Script from 'next/script'
 import { Diamond } from '@/components/ui/Diamond'
 import { StateSelector } from '@/components/ui/StateSelector'
+import { BRANDS } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Distribuidora de Cosméticos Premium | Eisen Distribuição',
   description:
-    'Distribua Boticário, Eudora, L\'Oréal, Vult e muito mais com entrega rápida e suporte presencial. Fale com o comercial da Eisen hoje.',
+    'Venda Dailus, Wella, Parfum Brasil, Felps e muito mais com entrega rápida e suporte presencial. Fale com o comercial da Eisen hoje.',
   openGraph: {
     title: 'Venda as marcas de cosméticos mais desejadas do Brasil',
     description:
-      'Boticário, Eudora, L\'Oréal, Vult e muito mais: entrega rápida e suporte presencial. Seja um distribuidor Eisen.',
+      'Dailus, Wella, Parfum Brasil, Felps e muito mais: entrega rápida e suporte presencial. Seja parceiro Eisen.',
     type: 'website',
   },
   robots: { index: false, follow: false },
 }
 
-const BRANDS = [
-  { name: 'O Boticário', abbr: 'Boticário' },
-  { name: 'Eudora', abbr: 'Eudora' },
-  { name: "L'Oréal", abbr: "L'Oréal" },
-  { name: 'Vult', abbr: 'Vult' },
-  { name: 'Quem Disse, Berenice?', abbr: 'QDB' },
-  { name: 'Wella', abbr: 'Wella' },
-]
+const LP_BRANDS = BRANDS.slice(0, 6)
 
 const DIFERENCIAIS = [
   {
@@ -119,7 +113,7 @@ export default function LpCosmeticosPage() {
             </h1>
 
             <p className="text-white/75 text-base lg:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-              Boticário, Eudora, L&apos;Oréal, Vult e muito mais: entrega rápida e suporte presencial.
+              Dailus, Wella, Parfum Brasil, Felps e muito mais: entrega rápida e suporte presencial.
             </p>
 
             <div className="flex justify-center">
@@ -133,19 +127,16 @@ export default function LpCosmeticosPage() {
           <div className="max-w-5xl mx-auto px-6 py-10">
             <p className="text-label text-eisen-faint text-center mb-8">Marcas do nosso portfólio</p>
             <div className="grid grid-cols-3 sm:grid-cols-6 gap-6 items-center justify-items-center">
-              {BRANDS.map((brand) => (
-                <div key={brand.name} className="flex items-center justify-center h-12 w-full" title={brand.name}>
-                  <span
-                    className="font-black text-center leading-none select-none"
-                    style={{
-                      color: '#C0C4CC',
-                      fontSize: brand.abbr.length > 6 ? '0.7rem' : '0.9rem',
-                      letterSpacing: '-0.02em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    {brand.abbr}
-                  </span>
+              {LP_BRANDS.map((brand) => (
+                <div key={brand.name} className="flex items-center justify-center h-12 w-full">
+                  <Image
+                    src={brand.logo}
+                    alt={brand.name}
+                    width={90}
+                    height={36}
+                    className="object-contain opacity-50"
+                    style={{ maxHeight: 36 }}
+                  />
                 </div>
               ))}
             </div>

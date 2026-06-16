@@ -1,15 +1,10 @@
 import Image from 'next/image'
 import { Diamond } from '@/components/ui/Diamond'
 import { StateSelector } from '@/components/ui/StateSelector'
+import { BRANDS } from '@/lib/constants'
 
-const BRANDS = [
-  { name: 'O Boticário', abbr: 'Boticário' },
-  { name: 'Eudora', abbr: 'Eudora' },
-  { name: 'Quem Disse, Berenice?', abbr: 'QDB' },
-  { name: 'Vult', abbr: 'Vult' },
-  { name: "L'Oréal", abbr: "L'Oréal" },
-  { name: 'Wella', abbr: 'Wella' },
-]
+// Exibe os primeiros 6 logos do portfólio atual
+const LP_BRANDS = BRANDS.slice(0, 6)
 
 const DIFERENCIAIS = [
   {
@@ -131,19 +126,16 @@ export default function SejaClientePage() {
         <div className="max-w-6xl mx-auto px-6 py-10">
           <p className="text-label text-eisen-faint text-center mb-8">Marcas do nosso portfólio</p>
           <div className="grid grid-cols-3 sm:grid-cols-6 gap-6 items-center justify-items-center">
-            {BRANDS.map((brand) => (
-              <div key={brand.name} className="flex items-center justify-center h-12 w-full" title={brand.name}>
-                <span
-                  className="font-black text-center leading-none select-none"
-                  style={{
-                    color: '#C0C4CC',
-                    fontSize: brand.abbr.length > 6 ? '0.7rem' : '0.9rem',
-                    letterSpacing: '-0.02em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {brand.abbr}
-                </span>
+            {LP_BRANDS.map((brand) => (
+              <div key={brand.name} className="flex items-center justify-center h-12 w-full">
+                <Image
+                  src={brand.logo}
+                  alt={brand.name}
+                  width={90}
+                  height={36}
+                  className="object-contain opacity-50"
+                  style={{ maxHeight: 36 }}
+                />
               </div>
             ))}
           </div>

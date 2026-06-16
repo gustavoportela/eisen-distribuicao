@@ -28,7 +28,7 @@ const BENEFICIOS = [
       </svg>
     ),
     title: 'Marcas Premium',
-    desc: 'Revenda Boticário, Eudora, Vult, L\'Oréal e outras marcas que seus clientes já conhecem.',
+    desc: 'Revenda Dailus, Wella, Parfum Brasil, Felps e outras marcas que seus clientes já conhecem.',
   },
   {
     num: '02',
