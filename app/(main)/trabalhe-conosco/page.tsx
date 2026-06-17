@@ -375,19 +375,21 @@ export default async function TrabalheConoscoPage() {
                 filter: 'blur(50px)',
               }} />
               <div className="relative z-10">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-[10px] font-semibold uppercase" style={{ color: 'rgba(255,255,255,0.38)', letterSpacing: '0.18em' }}>
-                    Em parceria com
-                  </span>
-                  <SolidesLogo />
-                </div>
                 <h3 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: 'clamp(1.25rem, 2vw, 1.625rem)',
-                  fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.2, color: '#fff',
+                  fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.3, color: '#fff',
+                  display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.45em',
                 }}>
-                  Portal de carreiras da Eisen{' '}
-                  <span style={{ color: '#FFCC00' }}>na Solides</span>
+                  Portal de carreiras da Eisen na
+                  <span style={{
+                    display: 'inline-flex', alignItems: 'center',
+                    background: '#fff', borderRadius: '8px',
+                    padding: '4px 12px', lineHeight: 1,
+                  }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/logos/solides.webp" alt="Solides" style={{ height: '1.1em', width: 'auto', display: 'block' }} />
+                  </span>
                 </h3>
               </div>
               <div className="relative z-10 shrink-0">
@@ -492,20 +494,6 @@ export default async function TrabalheConoscoPage() {
   )
 }
 
-function SolidesLogo() {
-  return (
-    <svg width="62" height="16" viewBox="0 0 124 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Solides">
-      <text
-        x="0" y="24"
-        fontFamily="system-ui, -apple-system, sans-serif"
-        fontSize="26"
-        fontWeight="700"
-        fill="#B97FE8"
-        letterSpacing="-0.5"
-      >solides</text>
-    </svg>
-  )
-}
 
 function WhatsAppIcon() {
   return (
