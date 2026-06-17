@@ -272,11 +272,74 @@ export default async function TrabalheConoscoPage() {
                     </a>
                   ))}
                 </div>
-                <p className="text-xs text-right" style={{ color: 'rgba(0,0,0,0.3)' }}>
+                <p className="text-xs text-right mb-10" style={{ color: 'rgba(0,0,0,0.3)' }}>
                   {vagas.length} {vagas.length === 1 ? 'vaga' : 'vagas'} · via Sólides · atualiza a cada hora
                 </p>
               </>
             )}
+
+            {/* ── CTA Portal Sólides ─── */}
+            <a
+              href="https://eisen.vagas.solides.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative flex flex-col sm:flex-row items-center justify-between gap-8 overflow-hidden"
+              style={{
+                borderRadius: '20px',
+                background: 'linear-gradient(120deg, #000044 0%, #000066 50%, #0000A0 100%)',
+                padding: 'clamp(32px, 4vw, 48px) clamp(28px, 4vw, 52px)',
+              }}
+            >
+              {/* Glows */}
+              <div className="absolute pointer-events-none" style={{
+                right: '-40px', top: '-40px', width: '320px', height: '280px',
+                background: 'radial-gradient(circle at 60% 30%, rgba(255,196,218,0.25) 0%, transparent 65%)',
+                filter: 'blur(60px)',
+              }} />
+              <div className="absolute pointer-events-none" style={{
+                left: '30%', bottom: '-30px', width: '280px', height: '200px',
+                background: 'radial-gradient(ellipse, rgba(255,204,0,0.12) 0%, transparent 65%)',
+                filter: 'blur(50px)',
+              }} />
+
+              {/* Left */}
+              <div className="relative z-10">
+                <p className="text-[10px] font-semibold uppercase mb-3 flex items-center gap-2"
+                  style={{ color: 'rgba(255,255,255,0.4)', letterSpacing: '0.18em' }}>
+                  <span className="inline-block w-3 h-px" style={{ background: 'rgba(255,255,255,0.25)' }} />
+                  Portal oficial de vagas
+                </p>
+                <h3 style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(1.375rem, 2.2vw, 1.75rem)',
+                  fontWeight: 700,
+                  letterSpacing: '-0.03em',
+                  lineHeight: 1.2,
+                  color: '#ffffff',
+                }}>
+                  Acesse todas as oportunidades{' '}
+                  <span style={{ color: '#FFCC00' }}>abertas na Eisen</span>
+                </h3>
+                <p className="text-sm mt-2" style={{ color: 'rgba(255,255,255,0.45)', lineHeight: 1.6 }}>
+                  Candidatura direta, acompanhamento do processo e banco de talentos.
+                </p>
+              </div>
+
+              {/* Right: button */}
+              <div className="relative z-10 shrink-0">
+                <div
+                  className="inline-flex items-center gap-2.5 font-bold px-7 py-3.5 transition-all group-hover:scale-105 whitespace-nowrap"
+                  style={{ background: '#FFCC00', color: '#08084A', borderRadius: '10px', fontSize: '0.9375rem' }}
+                >
+                  Ir para o portal
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </div>
+              </div>
+            </a>
           </TrabalheAnimations>
         </div>
       </section>

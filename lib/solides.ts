@@ -12,7 +12,14 @@ export async function fetchVagas(): Promise<SolidesVaga[]> {
   try {
     const res = await fetch(
       'https://apigw.solides.com.br/jobs/v3/home/vacancy?slug=eisen&take=30',
-      { next: { revalidate: 3600 } }
+      {
+        next: { revalidate: 3600 },
+        headers: {
+          'Accept': 'application/json',
+          'Origin': 'https://eisen.vagas.solides.com.br',
+          'Referer': 'https://eisen.vagas.solides.com.br/',
+        },
+      }
     )
     if (!res.ok) return []
     const json = await res.json()
