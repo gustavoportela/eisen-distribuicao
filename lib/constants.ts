@@ -74,8 +74,8 @@ export const DIFFERENTIALS = [
   },
   {
     num: '02',
-    title: 'Centro de distribuição próprio',
-    text: 'Operação logística própria. Agilidade e rastreabilidade em todos os pedidos.',
+    title: 'Centro de Distribuição próprio no RS, SC e PR',
+    text: 'Operação logística estruturada para atender todas as localidades e regiões dos estados do RS, SC, e PR, de forma organizada e pontual.',
   },
   {
     num: '03',
