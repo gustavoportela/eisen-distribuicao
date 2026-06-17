@@ -133,7 +133,7 @@ export function Differentials() {
                 fontFamily: 'var(--font-display)',
               }}
             >
-              Por que distribuidores<br />escolhem a Eisen
+              Por que escolher<br />a Eisen?
             </h2>
           </m.div>
 
