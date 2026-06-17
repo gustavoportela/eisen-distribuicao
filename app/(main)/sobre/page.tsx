@@ -87,9 +87,9 @@ export default function SobrePage() {
             <div className="mb-8">
               <SectionLabel variant="line-dark">Sobre a Eisen</SectionLabel>
             </div>
-            <h1 className="text-display text-white mb-6 max-w-[720px]">
-              Uma distribuidora construída sobre{' '}
-              <span style={{ color: '#FFC4DA' }}>relacionamentos</span>
+            <h1 className="text-display text-white mb-6 max-w-[720px]" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+              Uma distribuidora construída com o propósito de criar relacionamento entre negócios locais e{' '}
+              <span style={{ color: '#FFC4DA' }}>grandes marcas nacionais.</span>
             </h1>
             <p className="text-white/75 text-lg leading-relaxed max-w-[520px]">
               15 anos conectando grandes marcas de cosméticos e beleza aos pontos de venda,
