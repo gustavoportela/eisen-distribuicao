@@ -84,8 +84,8 @@ export const DIFFERENTIALS = [
   },
   {
     num: '04',
-    title: 'Promotoria e benefícios',
-    text: 'Promotores nas lojas, materiais de ponto de venda e programas de incentivo.',
+    title: 'Equipe Comercial Consultiva',
+    text: 'Profissionais qualificados para contribuir com o crescimento do seu negócio.',
   },
 ]
 
