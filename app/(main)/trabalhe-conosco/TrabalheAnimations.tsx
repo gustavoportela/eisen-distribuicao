@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -14,19 +14,19 @@ interface Props {
 export function TrabalheAnimations({ children, variant = 'fadeUp', delay = 0, className = '' }: Props) {
   if (variant === 'hero') {
     return (
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.65, delay, ease }}
         className={className}
       >
         {children}
-      </motion.div>
+      </m.div>
     )
   }
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
@@ -34,6 +34,6 @@ export function TrabalheAnimations({ children, variant = 'fadeUp', delay = 0, cl
       className={className}
     >
       {children}
-    </motion.div>
+    </m.div>
   )
 }

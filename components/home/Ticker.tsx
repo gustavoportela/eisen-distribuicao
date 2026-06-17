@@ -26,9 +26,11 @@ export function Ticker() {
   return (
     <div
       style={{
+        position: 'relative',
+        zIndex: 1,
         borderTop: '1px solid rgba(0,0,0,0.06)',
         borderBottom: '1px solid rgba(0,0,0,0.06)',
-        background: '#FAFAFA',
+        backgroundColor: '#FAFAFA',
         overflow: 'hidden',
         padding: '16px 0',
       }}
