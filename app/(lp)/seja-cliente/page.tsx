@@ -261,15 +261,9 @@ export default function SejaClientePage() {
         <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-6 py-20 text-center">
-          <div className="flex items-center justify-center gap-2.5 mb-8">
-            <div className="w-4 h-px" style={{ background: 'rgba(255,255,255,0.3)' }} />
-            <span className="text-[10px] font-semibold uppercase" style={{ color: 'rgba(255,255,255,0.5)', letterSpacing: '0.18em' }}>Vagas limitadas por região</span>
-            <div className="w-4 h-px" style={{ background: 'rgba(255,255,255,0.3)' }} />
-          </div>
-
           <h2 className="text-white font-semibold mb-3"
             style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', letterSpacing: '-0.03em', lineHeight: 1.05 }}>
-            Sua região ainda tem vagas abertas.
+            Entre em contato com os nossos consultores especializados.
           </h2>
           <p className="mb-10 max-w-md mx-auto text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>
             Selecione seu estado e fale agora com nosso consultor. Atendemos RS, SC, PR e SP.
