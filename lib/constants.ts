@@ -70,7 +70,7 @@ export const DIFFERENTIALS = [
   {
     num: '01',
     title: 'Marcas de renome e desejo',
-    text: 'Portfólio premium que seus clientes já conhecem e pedem.',
+    text: 'Portfólio premium que os consumidores já conhecem e buscam para comprar.',
   },
   {
     num: '02',
