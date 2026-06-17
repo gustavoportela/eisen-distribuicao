@@ -55,22 +55,6 @@ const PILARES = [
   },
 ]
 
-function SkeletonCard() {
-  return (
-    <div
-      className="bg-white animate-pulse p-6"
-      style={{ borderRadius: '14px', border: '1.5px solid rgba(0,0,102,0.09)' }}
-    >
-      <div className="h-5 bg-eisen-border rounded w-3/4 mb-3" />
-      <div className="h-3 bg-eisen-border rounded w-full mb-2" />
-      <div className="h-3 bg-eisen-border rounded w-5/6 mb-5" />
-      <div className="flex gap-2">
-        <div className="h-6 bg-eisen-border rounded-full w-16" />
-        <div className="h-6 bg-eisen-border rounded-full w-20" />
-      </div>
-    </div>
-  )
-}
 
 export default function TrabalheConoscoPage() {
   const wppRS = wppLink('RS')
@@ -219,46 +203,28 @@ export default function TrabalheConoscoPage() {
           </TrabalheAnimations>
 
           <TrabalheAnimations variant="fadeUp" delay={0.08}>
-            <p className="text-eisen-faint text-sm mb-6 flex items-center gap-2">
-              <svg className="animate-spin shrink-0" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10" strokeOpacity="0.3" />
-                <path d="M12 2a10 10 0 0 1 10 10" />
-              </svg>
-              Buscando vagas abertas...
-            </p>
-
-            <div className="grid sm:grid-cols-3 gap-5 mb-8">
-              <SkeletonCard />
-              <SkeletonCard />
-              <SkeletonCard />
-            </div>
-
-            <div
-              className="p-6 flex flex-col sm:flex-row items-start sm:items-center gap-5 justify-between"
+            <iframe
+              src="https://eisen.vagas.solides.com.br/"
+              title="Vagas abertas na Eisen"
+              className="w-full"
               style={{
+                minHeight: '700px',
+                border: 'none',
                 borderRadius: '14px',
-                background: '#F4F4F8',
-                border: '1.5px solid rgba(0,0,102,0.09)',
+                display: 'block',
               }}
-            >
-              <div>
-                <p className="font-semibold text-eisen-navy mb-1" style={{ fontFamily: 'var(--font-display)' }}>Vagas gerenciadas pelo portal Sólides</p>
-                <p className="text-eisen-soft text-sm">
-                  As oportunidades abertas ficam disponíveis em nosso portal oficial. Verifique as vagas atualizadas lá.
-                </p>
-                <p className="text-eisen-faint text-xs mt-2 italic">
-                  Não há vagas abertas no momento, mas deixe seu currículo conosco abaixo.
-                </p>
-              </div>
+              loading="lazy"
+            />
+            <div className="mt-6 flex justify-end">
               <a
                 href="https://eisen.vagas.solides.com.br"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center gap-2 font-bold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity whitespace-nowrap"
-                style={{ background: '#000066', color: '#FFFFFF', borderRadius: '8px' }}
+                className="inline-flex items-center gap-2 text-sm font-medium hover:opacity-75 transition-opacity"
+                style={{ color: '#000066' }}
               >
-                Ver vagas no portal
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                Abrir portal completo
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
                   <polyline points="15 3 21 3 21 9" />
                   <line x1="10" y1="14" x2="21" y2="3" />
