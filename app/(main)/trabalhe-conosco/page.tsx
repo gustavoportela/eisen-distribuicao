@@ -353,48 +353,97 @@ export default async function TrabalheConoscoPage() {
             )}
 
             {/* ── CTA Portal ── */}
+            <style>{`
+              .portal-banner {
+                transition: transform 0.45s cubic-bezier(0.34,1.3,0.64,1), box-shadow 0.4s ease;
+              }
+              .portal-banner:hover {
+                transform: scale(1.012);
+                box-shadow: 0 24px 60px rgba(0,0,80,0.45);
+              }
+              .solides-pill {
+                transform: rotate(-5deg);
+                transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease;
+                overflow: hidden;
+                position: relative;
+              }
+              .portal-banner:hover .solides-pill {
+                transform: rotate(0deg) scale(1.06);
+                box-shadow: 0 8px 28px rgba(139,47,201,0.28);
+              }
+              .solides-pill::after {
+                content: '';
+                position: absolute;
+                top: 0; left: -80%;
+                width: 50%; height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.65), transparent);
+                transform: skewX(-18deg);
+                pointer-events: none;
+              }
+              .portal-banner:hover .solides-pill::after {
+                animation: solides-shine 0.55s ease forwards;
+              }
+              @keyframes solides-shine {
+                to { left: 160%; }
+              }
+              .portal-btn {
+                transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), filter 0.3s ease;
+              }
+              .portal-banner:hover .portal-btn {
+                transform: scale(1.07);
+                filter: brightness(1.08);
+              }
+            `}</style>
             <a
               href="https://eisen.vagas.solides.com.br"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col sm:flex-row items-center justify-between gap-8 overflow-hidden"
+              className="portal-banner relative flex flex-col sm:flex-row items-center justify-between gap-8 overflow-hidden"
               style={{
                 borderRadius: '20px',
                 background: 'linear-gradient(120deg, #000044 0%, #000066 50%, #0000A0 100%)',
                 padding: 'clamp(28px, 4vw, 44px) clamp(28px, 4vw, 52px)',
               }}
             >
+              {/* Pink glow top-right */}
               <div className="absolute pointer-events-none" style={{
                 right: '-40px', top: '-40px', width: '320px', height: '280px',
                 background: 'radial-gradient(circle at 60% 30%, rgba(255,196,218,0.22) 0%, transparent 65%)',
                 filter: 'blur(60px)',
               }} />
+              {/* Yellow glow bottom-center */}
               <div className="absolute pointer-events-none" style={{
                 left: '30%', bottom: '-30px', width: '280px', height: '200px',
                 background: 'radial-gradient(ellipse, rgba(255,204,0,0.10) 0%, transparent 65%)',
                 filter: 'blur(50px)',
               }} />
+
               <div className="relative z-10">
                 <h3 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: 'clamp(1.25rem, 2vw, 1.625rem)',
                   fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.3, color: '#fff',
-                  display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.45em',
+                  display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.55em',
                 }}>
                   Portal de carreiras da Eisen na
-                  <span style={{
-                    display: 'inline-flex', alignItems: 'center',
-                    background: '#fff', borderRadius: '8px',
-                    padding: '4px 12px', lineHeight: 1,
-                  }}>
+                  <span
+                    className="solides-pill"
+                    style={{
+                      display: 'inline-flex', alignItems: 'center',
+                      background: '#fff', borderRadius: '10px',
+                      padding: '6px 18px', lineHeight: 1,
+                      boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
+                    }}
+                  >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/logos/solides.webp" alt="Solides" style={{ height: '1.1em', width: 'auto', display: 'block' }} />
+                    <img src="/logos/solides.webp" alt="Solides" style={{ height: '0.95em', width: 'auto', display: 'block' }} />
                   </span>
                 </h3>
               </div>
+
               <div className="relative z-10 shrink-0">
                 <div
-                  className="inline-flex items-center gap-2.5 font-bold px-7 py-3.5 transition-all group-hover:scale-105 whitespace-nowrap"
+                  className="portal-btn inline-flex items-center gap-2.5 font-bold px-7 py-3.5 whitespace-nowrap"
                   style={{ background: '#FFCC00', color: '#08084A', borderRadius: '10px', fontSize: '0.9375rem' }}
                 >
                   Acessar portal
