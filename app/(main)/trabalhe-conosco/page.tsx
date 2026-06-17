@@ -203,33 +203,59 @@ export default function TrabalheConoscoPage() {
           </TrabalheAnimations>
 
           <TrabalheAnimations variant="fadeUp" delay={0.08}>
-            <iframe
-              src="https://eisen.vagas.solides.com.br/"
-              title="Vagas abertas na Eisen"
-              className="w-full"
+            <div
+              className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 p-10 lg:p-14"
               style={{
-                minHeight: '700px',
-                border: 'none',
-                borderRadius: '14px',
-                display: 'block',
+                borderRadius: '20px',
+                background: 'linear-gradient(135deg, #000044 0%, #000066 60%, #00008F 100%)',
+                border: '1px solid rgba(255,255,255,0.07)',
               }}
-              loading="lazy"
-            />
-            <div className="mt-6 flex justify-end">
-              <a
-                href="https://eisen.vagas.solides.com.br"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium hover:opacity-75 transition-opacity"
-                style={{ color: '#000066' }}
-              >
-                Abrir portal completo
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg>
-              </a>
+            >
+              {/* Left: text */}
+              <div className="flex-1 text-center lg:text-left">
+                <p
+                  className="text-[10px] font-semibold uppercase mb-5 flex items-center justify-center lg:justify-start gap-2"
+                  style={{ color: 'rgba(255,255,255,0.4)', letterSpacing: '0.18em' }}
+                >
+                  <span className="inline-block w-3 h-px" style={{ background: 'rgba(255,255,255,0.3)' }} />
+                  Portal de vagas
+                </p>
+                <h3
+                  className="text-white mb-3"
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
+                    fontWeight: 700,
+                    letterSpacing: '-0.03em',
+                    lineHeight: 1.15,
+                  }}
+                >
+                  Confira as vagas abertas<br />
+                  <span style={{ color: '#FFCC00' }}>no nosso portal Sólides</span>
+                </h3>
+                <p className="text-sm mb-0" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.75 }}>
+                  As oportunidades ficam sempre atualizadas lá. Candidatura em poucos cliques.
+                </p>
+              </div>
+
+              {/* Right: CTA */}
+              <div className="shrink-0 flex flex-col items-center gap-3">
+                <a
+                  href="https://eisen.vagas.solides.com.br"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 font-bold px-8 py-4 hover:opacity-90 transition-opacity whitespace-nowrap"
+                  style={{ background: '#FFCC00', color: '#08084A', borderRadius: '10px', fontSize: '0.9375rem' }}
+                >
+                  Ver vagas abertas
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+                <p className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>Abre em nova aba • portal.solides.com.br</p>
+              </div>
             </div>
           </TrabalheAnimations>
         </div>
