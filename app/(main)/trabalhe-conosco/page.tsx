@@ -187,48 +187,111 @@ export default async function TrabalheConoscoPage() {
       {/* ── 3. VAGAS ABERTAS ─────────────────────────────────────────── */}
       <section className="bg-white py-28 border-b border-eisen-border">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
+
+          {/* Header */}
           <TrabalheAnimations variant="fadeUp">
-            <div className="mb-5">
-              <SectionLabel variant="line">Vagas abertas</SectionLabel>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+              <div>
+                <div className="mb-5">
+                  <SectionLabel variant="line">Vagas abertas</SectionLabel>
+                </div>
+                <h2
+                  style={{
+                    fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
+                    fontWeight: 300,
+                    letterSpacing: '-1px',
+                    lineHeight: 1.06,
+                    color: '#08084A',
+                    fontFamily: 'var(--font-display)',
+                  }}
+                >
+                  Oportunidades na Eisen
+                </h2>
+              </div>
+
+              {/* Status badge */}
+              {vagas.length > 0 ? (
+                <div
+                  className="shrink-0 self-start sm:self-auto inline-flex items-center gap-2 px-4 py-2 rounded-full"
+                  style={{ background: 'rgba(0,160,80,0.08)', border: '1px solid rgba(0,160,80,0.2)' }}
+                >
+                  <span className="w-2 h-2 rounded-full shrink-0" style={{ background: '#00A050' }} />
+                  <span className="text-xs font-semibold" style={{ color: '#005A2B' }}>
+                    {vagas.length} {vagas.length === 1 ? 'vaga aberta' : 'vagas abertas'}
+                  </span>
+                </div>
+              ) : (
+                <div
+                  className="shrink-0 self-start sm:self-auto inline-flex items-center gap-2 px-4 py-2 rounded-full"
+                  style={{ background: 'rgba(0,0,0,0.04)', border: '1px solid rgba(0,0,0,0.1)' }}
+                >
+                  <span className="w-2 h-2 rounded-full shrink-0" style={{ background: '#999' }} />
+                  <span className="text-xs font-semibold" style={{ color: '#666' }}>
+                    Sem vagas no momento
+                  </span>
+                </div>
+              )}
             </div>
-            <h2
-              className="mb-12 max-w-[460px]"
-              style={{
-                fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
-                fontWeight: 300,
-                letterSpacing: '-1px',
-                lineHeight: 1.06,
-                color: '#08084A',
-                fontFamily: 'var(--font-display)',
-              }}
-            >
-              Oportunidades na Eisen
-            </h2>
           </TrabalheAnimations>
 
           <TrabalheAnimations variant="fadeUp" delay={0.08}>
             {vagas.length === 0 ? (
+              /* ── Empty state ── */
               <div
-                className="p-10 text-center"
-                style={{ borderRadius: '14px', background: '#F4F4F8', border: '1.5px solid rgba(0,0,102,0.09)' }}
+                className="relative overflow-hidden mb-10"
+                style={{ borderRadius: '20px', border: '1.5px solid rgba(0,0,102,0.09)', background: '#FAFAFA' }}
               >
-                <p className="font-semibold text-eisen-navy mb-1" style={{ fontFamily: 'var(--font-display)' }}>
-                  Nenhuma vaga aberta no momento
-                </p>
-                <p className="text-eisen-soft text-sm">
-                  Deixe seu currículo abaixo e entraremos em contato quando surgir uma oportunidade.
-                </p>
+                <div className="absolute pointer-events-none inset-0" style={{
+                  background: 'radial-gradient(ellipse 60% 80% at 90% 50%, rgba(255,204,0,0.07) 0%, transparent 70%)',
+                }} />
+                <div className="relative flex flex-col lg:flex-row items-center gap-10 p-10 lg:p-14">
+                  <div
+                    className="shrink-0 flex items-center justify-center"
+                    style={{ width: 72, height: 72, borderRadius: 18, background: 'rgba(0,0,102,0.06)' }}
+                  >
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#000066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" />
+                      <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                      <line x1="12" y1="12" x2="12" y2="16" />
+                      <line x1="10" y1="14" x2="14" y2="14" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 text-center lg:text-left">
+                    <h3
+                      className="mb-2"
+                      style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 700, color: '#0C0C14' }}
+                    >
+                      Nenhuma vaga aberta no momento
+                    </h3>
+                    <p className="text-sm leading-relaxed max-w-lg" style={{ color: '#78787E' }}>
+                      Estamos sempre crescendo. Cadastre-se no banco de talentos e seja o primeiro a saber quando uma vaga surgir na sua área.
+                    </p>
+                  </div>
+                  <a
+                    href="https://eisen.vagas.solides.com.br"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 inline-flex items-center gap-2 font-semibold px-6 py-3 hover:opacity-90 transition-opacity whitespace-nowrap"
+                    style={{ background: '#000066', color: '#fff', borderRadius: '10px', fontSize: '0.875rem' }}
+                  >
+                    Cadastrar no banco de talentos
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             ) : (
+              /* ── Vacancy grid ── */
               <>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                  {vagas.map((vaga) => (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
+                  {vagas.slice(0, 6).map((vaga) => (
                     <a
                       key={vaga.id}
                       href={vagaUrl(vaga.id)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex flex-col justify-between bg-white p-6 transition-shadow hover:shadow-md"
+                      className="group flex flex-col justify-between bg-white p-6 transition-all hover:shadow-md hover:-translate-y-0.5"
                       style={{ borderRadius: '14px', border: '1.5px solid rgba(0,0,102,0.09)' }}
                     >
                       <div>
@@ -240,24 +303,18 @@ export default async function TrabalheConoscoPage() {
                         </h3>
                         <div className="flex flex-wrap gap-1.5 mb-4">
                           {vaga.city && vaga.state && (
-                            <span
-                              className="text-[11px] font-medium px-2.5 py-1 rounded-full"
-                              style={{ background: 'rgba(0,0,102,0.06)', color: '#000066' }}
-                            >
+                            <span className="text-[11px] font-medium px-2.5 py-1 rounded-full"
+                              style={{ background: 'rgba(0,0,102,0.06)', color: '#000066' }}>
                               {vaga.city.name} · {vaga.state.code}
                             </span>
                           )}
-                          <span
-                            className="text-[11px] font-medium px-2.5 py-1 rounded-full"
-                            style={{ background: 'rgba(0,0,102,0.06)', color: '#000066' }}
-                          >
+                          <span className="text-[11px] font-medium px-2.5 py-1 rounded-full"
+                            style={{ background: 'rgba(0,0,102,0.06)', color: '#000066' }}>
                             {jobTypeLabel(vaga.jobType)}
                           </span>
                           {vaga.recruitmentContractType[0] && (
-                            <span
-                              className="text-[11px] font-medium px-2.5 py-1 rounded-full"
-                              style={{ background: 'rgba(255,204,0,0.14)', color: '#6B4F00' }}
-                            >
+                            <span className="text-[11px] font-medium px-2.5 py-1 rounded-full"
+                              style={{ background: 'rgba(255,204,0,0.14)', color: '#6B4F00' }}>
                               {vaga.recruitmentContractType[0].name}
                             </span>
                           )}
@@ -272,13 +329,30 @@ export default async function TrabalheConoscoPage() {
                     </a>
                   ))}
                 </div>
-                <p className="text-xs text-right mb-10" style={{ color: 'rgba(0,0,0,0.3)' }}>
-                  {vagas.length} {vagas.length === 1 ? 'vaga' : 'vagas'} · via Sólides · atualiza a cada hora
-                </p>
+
+                {vagas.length > 6 && (
+                  <div className="flex items-center justify-between mb-8">
+                    <p className="text-xs" style={{ color: 'rgba(0,0,0,0.28)' }}>
+                      Exibindo 6 de {vagas.length} vagas
+                    </p>
+                    <a
+                      href="https://eisen.vagas.solides.com.br"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold hover:opacity-75 transition-opacity"
+                      style={{ color: '#000066' }}
+                    >
+                      Ver todas as {vagas.length} vagas
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </div>
+                )}
               </>
             )}
 
-            {/* ── CTA Portal Sólides ─── */}
+            {/* ── CTA Portal ── */}
             <a
               href="https://eisen.vagas.solides.com.br"
               target="_blank"
@@ -287,52 +361,39 @@ export default async function TrabalheConoscoPage() {
               style={{
                 borderRadius: '20px',
                 background: 'linear-gradient(120deg, #000044 0%, #000066 50%, #0000A0 100%)',
-                padding: 'clamp(32px, 4vw, 48px) clamp(28px, 4vw, 52px)',
+                padding: 'clamp(28px, 4vw, 44px) clamp(28px, 4vw, 52px)',
               }}
             >
-              {/* Glows */}
               <div className="absolute pointer-events-none" style={{
                 right: '-40px', top: '-40px', width: '320px', height: '280px',
-                background: 'radial-gradient(circle at 60% 30%, rgba(255,196,218,0.25) 0%, transparent 65%)',
+                background: 'radial-gradient(circle at 60% 30%, rgba(255,196,218,0.22) 0%, transparent 65%)',
                 filter: 'blur(60px)',
               }} />
               <div className="absolute pointer-events-none" style={{
                 left: '30%', bottom: '-30px', width: '280px', height: '200px',
-                background: 'radial-gradient(ellipse, rgba(255,204,0,0.12) 0%, transparent 65%)',
+                background: 'radial-gradient(ellipse, rgba(255,204,0,0.10) 0%, transparent 65%)',
                 filter: 'blur(50px)',
               }} />
-
-              {/* Left */}
               <div className="relative z-10">
-                <p className="text-[10px] font-semibold uppercase mb-3 flex items-center gap-2"
-                  style={{ color: 'rgba(255,255,255,0.4)', letterSpacing: '0.18em' }}>
-                  <span className="inline-block w-3 h-px" style={{ background: 'rgba(255,255,255,0.25)' }} />
-                  Portal oficial de vagas
+                <p className="text-[10px] font-semibold uppercase mb-3" style={{ color: 'rgba(255,255,255,0.38)', letterSpacing: '0.18em' }}>
+                  Portal de carreiras
                 </p>
                 <h3 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.375rem, 2.2vw, 1.75rem)',
-                  fontWeight: 700,
-                  letterSpacing: '-0.03em',
-                  lineHeight: 1.2,
-                  color: '#ffffff',
+                  fontSize: 'clamp(1.25rem, 2vw, 1.625rem)',
+                  fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.2, color: '#fff',
                 }}>
-                  Acesse todas as oportunidades{' '}
-                  <span style={{ color: '#FFCC00' }}>abertas na Eisen</span>
+                  Explore todas as vagas e o banco de talentos{' '}
+                  <span style={{ color: '#FFCC00' }}>no portal Eisen</span>
                 </h3>
-                <p className="text-sm mt-2" style={{ color: 'rgba(255,255,255,0.45)', lineHeight: 1.6 }}>
-                  Candidatura direta, acompanhamento do processo e banco de talentos.
-                </p>
               </div>
-
-              {/* Right: button */}
               <div className="relative z-10 shrink-0">
                 <div
                   className="inline-flex items-center gap-2.5 font-bold px-7 py-3.5 transition-all group-hover:scale-105 whitespace-nowrap"
                   style={{ background: '#FFCC00', color: '#08084A', borderRadius: '10px', fontSize: '0.9375rem' }}
                 >
-                  Ir para o portal
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  Acessar portal
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" y1="14" x2="21" y2="3" />
