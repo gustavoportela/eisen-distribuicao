@@ -16,7 +16,7 @@ const VALORES = [
   {
     num: '01',
     title: 'Excelência',
-    text: 'Operação logística própria, portfólio premium e time dedicado: padrão elevado em cada detalhe.',
+    text: 'Operação logística estruturada, garantindo entrega ágil em todas as regiões dos estados que atuamos.',
   },
   {
     num: '02',
@@ -26,7 +26,7 @@ const VALORES = [
   {
     num: '03',
     title: 'Relacionamento',
-    text: 'Proximidade real com quem distribui e quem vende, com presença física em cada região.',
+    text: 'Nosso modelo de negócio é consultivo, nosso time é capacitado para ajudar os nossos clientes a melhorarem seus resultados através dos produtos que distribuímos.',
   },
   {
     num: '04',
