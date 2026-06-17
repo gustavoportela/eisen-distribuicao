@@ -2,8 +2,9 @@
 
 import { useState } from 'react'
 import { Diamond } from '@/components/ui/Diamond'
+import { enviarCurriculo } from './actions'
 
-type FormState = 'idle' | 'submitting' | 'success'
+type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
 const CARGOS = [
   { value: '', label: 'Selecione o cargo de interesse' },
@@ -31,13 +32,11 @@ export function CurriculoForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormState('submitting')
-    // Simulated submission — no backend
-    setTimeout(() => {
-      setFormState('success')
-    }, 1200)
+    const result = await enviarCurriculo(form)
+    setFormState(result.ok ? 'success' : 'error')
   }
 
   if (formState === 'success') {
@@ -59,6 +58,31 @@ export function CurriculoForm() {
           className="text-eisen-navy text-sm font-semibold underline underline-offset-2 hover:text-eisen-navy/70 transition-colors"
         >
           Enviar outro currículo
+        </button>
+      </div>
+    )
+  }
+
+  if (formState === 'error') {
+    return (
+      <div className="bg-white rounded-2xl border border-red-100 p-10 flex flex-col items-center text-center gap-5">
+        <div className="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+        </div>
+        <div>
+          <h3 className="text-eisen-navy font-bold text-xl mb-2">Erro ao enviar</h3>
+          <p className="text-eisen-soft text-sm leading-relaxed max-w-sm">
+            Não foi possível enviar seu currículo. Tente novamente ou mande direto para{' '}
+            <a href="mailto:curriculos@grupoeisen.com.br" className="text-eisen-navy font-semibold underline">curriculos@grupoeisen.com.br</a>.
+          </p>
+        </div>
+        <button
+          onClick={() => setFormState('idle')}
+          className="text-eisen-navy text-sm font-semibold underline underline-offset-2 hover:opacity-70 transition-opacity"
+        >
+          Tentar novamente
         </button>
       </div>
     )
