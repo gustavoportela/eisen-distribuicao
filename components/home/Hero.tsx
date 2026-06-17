@@ -57,8 +57,7 @@ export function Hero() {
             color: '#ffffff',
             marginBottom: '0.875rem',
           }}>
-            <span style={{ fontWeight: 300 }}>As marcas que seus clientes </span>
-            <span style={{ fontWeight: 800 }}>já pedem e vendem.</span>
+            Conectando grandes marcas de beleza, saúde e bem-estar ao varejo da região Sul.
           </h1>
 
           <p className="animate-para" style={{
@@ -163,8 +162,7 @@ export function Hero() {
               color: '#08084A',
               marginBottom: '1.125rem',
             }}>
-              <span style={{ fontWeight: 400 }}>As marcas que seus clientes </span>
-              <span style={{ fontWeight: 800 }}>já pedem e vendem.</span>
+              Conectando grandes marcas de beleza, saúde e bem-estar ao varejo da região Sul.
             </h1>
 
             <p className="animate-para" style={{

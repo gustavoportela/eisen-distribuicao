@@ -69,7 +69,7 @@ export function Footer() {
             {/* Contato */}
             <div>
               <ColLabel>Contato</ColLabel>
-              {(['RS', 'SC', 'PR'] as const).map((state) => (
+              {(['RS', 'SC'] as const).map((state) => (
                 <div key={state} style={{ marginBottom: '1.1rem' }}>
                   <span
                     className="block text-[9px] font-semibold uppercase mb-0.5"
@@ -86,21 +86,6 @@ export function Footer() {
                   </a>
                 </div>
               ))}
-              <div style={{ marginBottom: '1.1rem' }}>
-                <span
-                  className="block text-[9px] font-semibold uppercase mb-0.5"
-                  style={{ color: 'rgba(0,0,0,0.25)', letterSpacing: '0.14em' }}
-                >
-                  SAC
-                </span>
-                <a
-                  href="tel:+555139026582"
-                  className="block text-sm transition-colors duration-150 hover:text-black"
-                  style={{ color: 'rgba(0,0,0,0.48)' }}
-                >
-                  +55 (51) 3902-6582
-                </a>
-              </div>
               <a
                 href="mailto:sac@grupoeisen.com.br"
                 className="block text-sm transition-colors duration-150 hover:text-black"
