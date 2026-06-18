@@ -97,9 +97,9 @@ export default function SejaClientePage() {
           </div>
 
           <h1 className="text-white max-w-3xl mb-6"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 600, lineHeight: 1.05, letterSpacing: '-0.03em' }}>
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 300, lineHeight: 1.05, letterSpacing: '-0.03em' }}>
             Venda as marcas que seus clientes já{' '}
-            <span style={{ color: '#FFCC00' }}>conhecem e pedem</span>
+            <span style={{ color: '#FFCC00', fontWeight: 500 }}>conhecem e pedem</span>
           </h1>
 
           <div className="text-white/75 text-sm font-medium mb-10 flex flex-wrap gap-x-6 gap-y-2 items-center">
@@ -156,7 +156,7 @@ export default function SejaClientePage() {
             className="text-center mb-12"
             style={{
               fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
-              fontWeight: 700,
+              fontWeight: 300,
               letterSpacing: '-0.03em',
               lineHeight: 1.06,
               color: '#0C0C14',
@@ -213,7 +213,7 @@ export default function SejaClientePage() {
             className="mb-12 max-w-xl"
             style={{
               fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
-              fontWeight: 700,
+              fontWeight: 300,
               letterSpacing: '-0.03em',
               lineHeight: 1.06,
               color: '#0C0C14',

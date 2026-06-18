@@ -103,13 +103,13 @@ export default function LpCosmeticosPage() {
               className="text-white mb-5"
               style={{
                 fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                fontWeight: 600,
+                fontWeight: 300,
                 lineHeight: 1.05,
                 letterSpacing: '-0.03em',
               }}
             >
               Venda as marcas de cosméticos{' '}
-              <span style={{ color: '#FFCC00' }}>mais desejadas do Brasil</span>
+              <span style={{ color: '#FFCC00', fontWeight: 500 }}>mais desejadas do Brasil</span>
             </h1>
 
             <p className="text-white/75 text-base lg:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -157,7 +157,7 @@ export default function LpCosmeticosPage() {
               <h2
                 style={{
                   fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
-                  fontWeight: 700,
+                  fontWeight: 300,
                   letterSpacing: '-0.03em',
                   lineHeight: 1.06,
                   color: '#0C0C14',

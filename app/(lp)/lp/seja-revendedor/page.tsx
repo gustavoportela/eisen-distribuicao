@@ -111,13 +111,13 @@ export default function LpSejaRevendedorPage() {
               className="text-white mb-5"
               style={{
                 fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                fontWeight: 600,
+                fontWeight: 300,
                 lineHeight: 1.05,
                 letterSpacing: '-0.03em',
               }}
             >
               Seja um revendedor das marcas que{' '}
-              <span style={{ color: '#FFCC00' }}>seus clientes já pedem</span>
+              <span style={{ color: '#FFCC00', fontWeight: 500 }}>seus clientes já pedem</span>
             </h1>
 
             <p className="text-white/75 text-base lg:text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -144,7 +144,7 @@ export default function LpSejaRevendedorPage() {
               <h2
                 style={{
                   fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
-                  fontWeight: 700,
+                  fontWeight: 300,
                   letterSpacing: '-0.03em',
                   lineHeight: 1.06,
                   color: '#0C0C14',
@@ -202,7 +202,7 @@ export default function LpSejaRevendedorPage() {
               className="mb-12 max-w-xl"
               style={{
                 fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
-                fontWeight: 700,
+                fontWeight: 300,
                 letterSpacing: '-0.03em',
                 lineHeight: 1.06,
                 color: '#0C0C14',
