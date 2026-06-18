@@ -23,8 +23,7 @@ export async function fetchVagas(): Promise<SolidesVaga[]> {
     )
     if (!res.ok) return []
     const json = await res.json()
-    const all = (json?.data?.data ?? []) as (SolidesVaga & { currentState?: string })[]
-    return all.filter((v) => v.currentState === 'publicada')
+    return (json?.data?.data ?? []) as SolidesVaga[]
   } catch {
     return []
   }
