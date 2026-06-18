@@ -18,20 +18,12 @@ const BENEFICIOS = [
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 7h12L16 13" />
+        <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+        <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
       </svg>
     ),
-    title: 'Vale Refeição e Alimentação',
-    desc: 'Cartão VR/VA mensal para refeição e compras no supermercado.',
-  },
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-      </svg>
-    ),
-    title: 'Plano de Saúde',
-    desc: 'Cobertura médica e odontológica para você e seus dependentes.',
+    title: 'Treinamento desde o primeiro dia',
+    desc: 'Você entra preparado. Oferecemos treinamento introdutório completo e oportunidades reais de desenvolvimento ao longo da carreira.',
   },
   {
     icon: (
@@ -40,18 +32,26 @@ const BENEFICIOS = [
         <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
       </svg>
     ),
-    title: 'Comissão por Resultado',
-    desc: 'Remuneração variável atrelada à sua performance. Quem entrega, ganha mais.',
+    title: 'Salário fixo + premiação mensal',
+    desc: 'Remuneração previsível com um plus para quem bate metas. Quem entrega mais, leva mais — simples assim.',
   },
   {
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
-        <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 7h12L16 13" />
       </svg>
     ),
-    title: 'Treinamentos e Capacitação',
-    desc: 'Acesso contínuo a treinamentos de produto, vendas e desenvolvimento profissional.',
+    title: 'Vale Alimentação R$ 600',
+    desc: 'R$ 600 mensais no cartão de alimentação. Sem burocracia, direto na sua conta todo mês.',
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+      </svg>
+    ),
+    title: 'Plano de Saúde Unimed',
+    desc: 'Cobertura Unimed com 50% subsidiado pela empresa, disponível a partir do terceiro mês.',
   },
   {
     icon: (
@@ -60,18 +60,8 @@ const BENEFICIOS = [
         <polyline points="12 6 12 12 16 14" />
       </svg>
     ),
-    title: 'Flexibilidade de Horário',
-    desc: 'Autonomia para organizar sua rotina com foco em resultado, não em presença.',
-  },
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-        <polyline points="17 6 23 6 23 12" />
-      </svg>
-    ),
-    title: 'Crescimento Interno',
-    desc: 'Plano de carreira estruturado. A maioria das nossas lideranças veio de dentro.',
+    title: 'Jornada de 44h semanais',
+    desc: 'Horário regular de segunda a sexta com sábados alternados — rotina previsível para você planejar sua vida.',
   },
 ]
 
@@ -318,10 +308,10 @@ export default async function TrabalheConoscoPage() {
             </h2>
           </TrabalheAnimations>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px rounded-2xl overflow-hidden" style={{ background: 'rgba(0,0,102,0.07)' }}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {BENEFICIOS.map((b, i) => (
               <TrabalheAnimations key={b.title} variant="fadeUp" delay={i * 0.06}>
-                <div className="group bg-white h-full overflow-hidden relative cursor-default">
+                <div className="group bg-white h-full overflow-hidden relative cursor-default rounded-2xl" style={{ border: '1.5px solid rgba(0,0,102,0.08)' }}>
                   <div
                     className="absolute top-0 left-0 right-0 h-[2px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                     style={{ background: '#FFCC00' }}
