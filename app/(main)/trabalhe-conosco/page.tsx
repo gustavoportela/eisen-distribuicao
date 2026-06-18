@@ -4,7 +4,8 @@ import { Diamond } from '@/components/ui/Diamond'
 import { CurriculoForm } from './CurriculoForm'
 import { TrabalheAnimations } from './TrabalheAnimations'
 import { wppLink } from '@/lib/whatsapp'
-import { fetchVagas, vagaUrl, jobTypeLabel } from '@/lib/solides'
+import { fetchVagas } from '@/lib/solides'
+import { VagasFilter } from './VagasFilter'
 
 export const revalidate = 3600
 
@@ -282,74 +283,7 @@ export default async function TrabalheConoscoPage() {
                 </div>
               </div>
             ) : (
-              /* ── Vacancy grid ── */
-              <>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
-                  {vagas.slice(0, 6).map((vaga) => (
-                    <a
-                      key={vaga.id}
-                      href={vagaUrl(vaga.id)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex flex-col justify-between bg-white p-6 transition-all hover:shadow-md hover:-translate-y-0.5"
-                      style={{ borderRadius: '14px', border: '1.5px solid rgba(0,0,102,0.09)' }}
-                    >
-                      <div>
-                        <h3
-                          className="font-bold mb-3 group-hover:text-eisen-navy transition-colors"
-                          style={{ fontSize: '0.9375rem', color: '#0C0C14', lineHeight: 1.35, fontFamily: 'var(--font-display)' }}
-                        >
-                          {vaga.title}
-                        </h3>
-                        <div className="flex flex-wrap gap-1.5 mb-4">
-                          {vaga.city && vaga.state && (
-                            <span className="text-[11px] font-medium px-2.5 py-1 rounded-full"
-                              style={{ background: 'rgba(0,0,102,0.06)', color: '#000066' }}>
-                              {vaga.city.name} · {vaga.state.code}
-                            </span>
-                          )}
-                          <span className="text-[11px] font-medium px-2.5 py-1 rounded-full"
-                            style={{ background: 'rgba(0,0,102,0.06)', color: '#000066' }}>
-                            {jobTypeLabel(vaga.jobType)}
-                          </span>
-                          {vaga.recruitmentContractType[0] && (
-                            <span className="text-[11px] font-medium px-2.5 py-1 rounded-full"
-                              style={{ background: 'rgba(255,204,0,0.14)', color: '#6B4F00' }}>
-                              {vaga.recruitmentContractType[0].name}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: '#000066' }}>
-                        Ver vaga
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-
-                {vagas.length > 6 && (
-                  <div className="flex items-center justify-between mb-8">
-                    <p className="text-xs" style={{ color: 'rgba(0,0,0,0.28)' }}>
-                      Exibindo 6 de {vagas.length} vagas
-                    </p>
-                    <a
-                      href="https://eisen.vagas.solides.com.br"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold hover:opacity-75 transition-opacity"
-                      style={{ color: '#000066' }}
-                    >
-                      Ver todas as {vagas.length} vagas
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </a>
-                  </div>
-                )}
-              </>
+              <VagasFilter vagas={vagas} />
             )}
 
             {/* ── CTA Portal ── */}
