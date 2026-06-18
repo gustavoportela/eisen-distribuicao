@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const SECTIONS = [
   {
     title: '1. Quem somos',
-    content: `A Eisen Distribuição Especializada Ltda., inscrita no CNPJ sob o nº [CNPJ], com sede em [endereço completo], é a controladora dos dados pessoais coletados por meio deste site (eisendistribuicao.com.br) e demais canais de atendimento.
+    content: `A Eisen Distribuição Especializada Ltda., inscrita no CNPJ sob o nº 88.635.305/0001-10, com sede em [endereço completo], é a controladora dos dados pessoais coletados por meio deste site (eisendistribuicao.com.br) e demais canais de atendimento.
 
 Para dúvidas sobre privacidade ou exercício dos seus direitos, entre em contato com nosso Encarregado (DPO) pelo e-mail: privacidade@grupoeisen.com.br.`,
   },
