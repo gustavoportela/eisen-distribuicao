@@ -14,57 +14,6 @@ export const metadata: Metadata = {
   description: 'Faça parte da equipe Eisen. Vagas abertas e currículo espontâneo para profissionais de vendas, logística e muito mais.',
 }
 
-const BENEFICIOS = [
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
-        <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
-      </svg>
-    ),
-    title: 'Treinamento desde o primeiro dia',
-    desc: 'Você entra preparado. Oferecemos treinamento introdutório completo e oportunidades reais de desenvolvimento ao longo da carreira.',
-  },
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="12" y1="1" x2="12" y2="23" />
-        <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-      </svg>
-    ),
-    title: 'Salário fixo + premiação mensal',
-    desc: 'Remuneração previsível com um plus para quem bate metas. Quem entrega mais, leva mais — simples assim.',
-  },
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 7h12L16 13" />
-      </svg>
-    ),
-    title: 'Vale Alimentação R$ 600',
-    desc: 'R$ 600 mensais no cartão de alimentação. Sem burocracia, direto na sua conta todo mês.',
-  },
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-      </svg>
-    ),
-    title: 'Plano de Saúde Unimed',
-    desc: 'Cobertura Unimed com 50% subsidiado pela empresa, disponível a partir do terceiro mês.',
-  },
-  {
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    ),
-    title: 'Jornada de 44h semanais',
-    desc: 'Horário regular de segunda a sexta com sábados alternados — rotina previsível para você planejar sua vida.',
-  },
-]
-
 const PROCESSO = [
   {
     step: '01',
@@ -286,15 +235,15 @@ export default async function TrabalheConoscoPage() {
         </div>
       </section>
 
-      {/* ── 3. BENEFÍCIOS ───────────────────────────────────────────── */}
+      {/* ── 3. PROCESSO SELETIVO ─────────────────────────────────────── */}
       <section className="bg-white py-28 border-b border-eisen-border">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <TrabalheAnimations variant="fadeUp">
             <div className="mb-7">
-              <SectionLabel variant="line">Benefícios</SectionLabel>
+              <SectionLabel variant="line">Como funciona</SectionLabel>
             </div>
             <h2
-              className="mb-16 max-w-[520px]"
+              className="mb-16 max-w-[460px]"
               style={{
                 fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
                 fontWeight: 300,
@@ -304,31 +253,38 @@ export default async function TrabalheConoscoPage() {
                 fontFamily: 'var(--font-display)',
               }}
             >
-              O que você encontra aqui
+              Nosso processo seletivo
             </h2>
           </TrabalheAnimations>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {BENEFICIOS.map((b, i) => (
-              <TrabalheAnimations key={b.title} variant="fadeUp" delay={i * 0.06}>
-                <div className="group bg-white h-full overflow-hidden relative cursor-default rounded-2xl" style={{ border: '1.5px solid rgba(0,0,102,0.08)' }}>
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[2px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
-                    style={{ background: '#FFCC00' }}
-                  />
-                  <div className="p-8 flex items-start gap-5">
-                    <div className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center mt-0.5"
-                      style={{ background: 'rgba(0,0,102,0.06)', color: '#000066' }}>
-                      {b.icon}
+          <div className="relative">
+            <div className="absolute hidden lg:block" style={{ top: 28, left: '12.5%', right: '12.5%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(0,0,102,0.12) 15%, rgba(0,0,102,0.12) 85%, transparent)' }} />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+              {PROCESSO.map((p, i) => (
+                <TrabalheAnimations key={p.step} variant="fadeUp" delay={i * 0.1}>
+                  <div className="flex flex-col gap-5">
+                    <div className="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-0">
+                      <div className="relative z-10 shrink-0">
+                        <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: '#F4F4F8', border: '1.5px solid rgba(0,0,102,0.1)', boxShadow: '0 2px 12px rgba(0,0,102,0.06)' }}>
+                          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#000066', color: '#FFCC00' }}>
+                            {p.icon}
+                          </div>
+                        </div>
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest lg:mt-4" style={{ color: 'rgba(0,0,102,0.35)' }}>
+                        Etapa {p.step}
+                      </span>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-base mb-1.5" style={{ color: '#0C0C14' }}>{b.title}</h3>
-                      <p className="text-sm leading-relaxed" style={{ color: '#78787E' }}>{b.desc}</p>
+                      <h3 className="font-semibold text-lg mb-2" style={{ color: '#0C0C14', fontFamily: 'var(--font-display)' }}>
+                        {p.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed" style={{ color: '#78787E' }}>{p.desc}</p>
                     </div>
                   </div>
-                </div>
-              </TrabalheAnimations>
-            ))}
+                </TrabalheAnimations>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -541,72 +497,7 @@ export default async function TrabalheConoscoPage() {
         </div>
       </section>
 
-      {/* ── 5. PROCESSO SELETIVO ─────────────────────────────────────── */}
-      <section style={{ backgroundColor: '#F4F4F8' }} className="py-28 border-b border-eisen-border">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <TrabalheAnimations variant="fadeUp">
-            <div className="mb-7">
-              <SectionLabel variant="line">Como funciona</SectionLabel>
-            </div>
-            <h2
-              className="mb-16 max-w-[460px]"
-              style={{
-                fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
-                fontWeight: 300,
-                letterSpacing: '-1px',
-                lineHeight: 1.06,
-                color: '#08084A',
-                fontFamily: 'var(--font-display)',
-              }}
-            >
-              Nosso processo seletivo
-            </h2>
-          </TrabalheAnimations>
-
-          {/* Timeline horizontal */}
-          <div className="relative">
-            {/* Connecting line — desktop only */}
-            <div className="absolute hidden lg:block" style={{ top: 28, left: '12.5%', right: '12.5%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(0,0,102,0.15) 15%, rgba(0,0,102,0.15) 85%, transparent)' }} />
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-              {PROCESSO.map((p, i) => (
-                <TrabalheAnimations key={p.step} variant="fadeUp" delay={i * 0.1}>
-                  <div className="flex flex-col gap-5">
-                    {/* Step indicator */}
-                    <div className="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-0">
-                      <div className="relative z-10 shrink-0">
-                        {/* Outer ring */}
-                        <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: 'white', border: '1.5px solid rgba(0,0,102,0.12)', boxShadow: '0 2px 12px rgba(0,0,102,0.08)' }}>
-                          {/* Inner filled */}
-                          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#000066', color: '#FFCC00' }}>
-                            {p.icon}
-                          </div>
-                        </div>
-                      </div>
-                      <span className="text-[10px] font-bold uppercase tracking-widest lg:mt-4" style={{ color: 'rgba(0,0,102,0.35)' }}>
-                        Etapa {p.step}
-                      </span>
-                    </div>
-
-                    {/* Content */}
-                    <div>
-                      <h3
-                        className="font-semibold text-lg mb-2"
-                        style={{ color: '#0C0C14', fontFamily: 'var(--font-display)' }}
-                      >
-                        {p.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed" style={{ color: '#78787E' }}>{p.desc}</p>
-                    </div>
-                  </div>
-                </TrabalheAnimations>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 6. CURRÍCULO ESPONTÂNEO ──────────────────────────────────── */}
+      {/* ── 5. CURRÍCULO ESPONTÂNEO ──────────────────────────────────── */}
       <section className="py-28 border-b border-eisen-border" style={{ backgroundColor: '#F4F4F8' }}>
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <TrabalheAnimations variant="fadeUp">
