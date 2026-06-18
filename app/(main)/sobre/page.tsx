@@ -56,45 +56,95 @@ export default function SobrePage() {
     <>
       {/* ── 1. HERO ─────────────────────────────────────── */}
       <section
-        className="grain relative overflow-hidden py-40 lg:py-52"
-        style={{ background: 'linear-gradient(160deg, #000044 0%, #000066 55%, #00008F 100%)' }}
+        className="grain relative overflow-hidden"
+        style={{
+          background: 'linear-gradient(160deg, #000033 0%, #000055 60%, #00007A 100%)',
+          paddingTop: 'clamp(130px, 14vw, 180px)',
+          paddingBottom: 'clamp(80px, 10vw, 120px)',
+        }}
       >
         {/* Blue center glow */}
         <div className="absolute pointer-events-none" style={{
-          left: '50%', top: '40%', transform: 'translate(-50%, -50%)',
-          width: '800px', height: '500px', borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(0,68,240,0.28) 0%, transparent 65%)',
-          filter: 'blur(80px)',
+          left: '60%', top: '30%', transform: 'translate(-50%, -50%)',
+          width: '900px', height: '600px', borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(0,68,240,0.22) 0%, transparent 65%)',
+          filter: 'blur(100px)',
         }} />
         {/* Pink orb top-right */}
         <div className="absolute pointer-events-none" style={{
-          right: '-60px', top: '-80px',
-          width: '700px', height: '700px', borderRadius: '50%',
-          background: 'radial-gradient(circle at 40% 40%, rgba(255,196,218,0.38) 0%, rgba(255,196,218,0.12) 45%, transparent 68%)',
-          filter: 'blur(80px)',
+          right: '-40px', top: '-60px',
+          width: '650px', height: '650px', borderRadius: '50%',
+          background: 'radial-gradient(circle at 40% 40%, rgba(255,196,218,0.32) 0%, rgba(255,196,218,0.08) 50%, transparent 70%)',
+          filter: 'blur(90px)',
         }} />
-        {/* Pink orb bottom-left */}
-        <div className="absolute pointer-events-none" style={{
-          left: '-80px', bottom: '-60px',
-          width: '500px', height: '500px', borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(255,196,218,0.22) 0%, transparent 65%)',
-          filter: 'blur(70px)',
-        }} />
-        <div className="absolute inset-0 bg-dot-pattern pointer-events-none opacity-35" />
+        <div className="absolute inset-0 bg-dot-pattern pointer-events-none opacity-30" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-10">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
           <SobreAnimations variant="hero">
-            <div className="mb-8">
-              <SectionLabel variant="line-dark">Sobre a Eisen</SectionLabel>
+
+            {/* Label */}
+            <div className="flex items-center gap-3 mb-10">
+              <div style={{ width: 28, height: 1.5, background: '#FFCC00', borderRadius: 2 }} />
+              <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
+                Sobre a Eisen
+              </span>
             </div>
-            <h1 className="text-display text-white mb-6 max-w-[720px]" style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)' }}>
+
+            {/* Headline */}
+            <h1
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: 'clamp(2.5rem, 5.5vw, 4.75rem)',
+                fontWeight: 300,
+                lineHeight: 1.02,
+                letterSpacing: '-0.04em',
+                color: '#fff',
+                marginBottom: '1.75rem',
+                maxWidth: 860,
+              }}
+            >
               Uma distribuidora construída com o propósito de criar relacionamento entre negócios locais e{' '}
-              <span style={{ color: '#FFC4DA' }}>grandes marcas nacionais.</span>
+              <span style={{ color: '#FFC4DA', fontWeight: 400 }}>grandes marcas nacionais.</span>
             </h1>
-            <p className="text-white/75 text-lg leading-relaxed max-w-[520px]">
-              15 anos conectando grandes marcas de cosméticos e beleza aos pontos de venda,
-              com estrutura própria, equipe presencial e compromisso verdadeiro.
-            </p>
+
+            {/* Divider */}
+            <div style={{ width: 40, height: 1, background: 'rgba(255,255,255,0.15)', margin: '2rem 0' }} />
+
+            {/* Subtitle + inline stat strip */}
+            <div className="flex flex-col lg:flex-row lg:items-end gap-10">
+              <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.85, maxWidth: 460 }}>
+                15 anos conectando grandes marcas de cosméticos e beleza aos pontos de venda,
+                com estrutura própria, equipe presencial e compromisso verdadeiro.
+              </p>
+
+              <div className="flex items-start gap-8 pb-1 lg:ml-auto lg:shrink-0">
+                {[
+                  { val: '15', label: 'Anos' },
+                  { val: '4', label: 'Estados' },
+                  { val: '+15k', label: 'Clientes' },
+                ].map((s, i) => (
+                  <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
+                    <span style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+                      fontWeight: 700,
+                      color: '#FFCC00',
+                      letterSpacing: '-0.05em',
+                      lineHeight: 1,
+                    }}>{s.val}</span>
+                    <span style={{
+                      fontSize: '0.625rem',
+                      fontWeight: 500,
+                      color: 'rgba(255,255,255,0.35)',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      marginTop: 6,
+                    }}>{s.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </SobreAnimations>
         </div>
       </section>

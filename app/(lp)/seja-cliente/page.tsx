@@ -71,50 +71,71 @@ export default function SejaClientePage() {
 
 
       {/* ── Hero ────────────────────────────────────────────────────────── */}
-      <section className="grain relative overflow-hidden"
-        style={{ background: 'linear-gradient(160deg, #000044 0%, #000066 55%, #00008F 100%)' }}>
+      <section
+        className="grain relative overflow-hidden"
+        style={{ background: 'linear-gradient(160deg, #000033 0%, #000055 60%, #00007A 100%)' }}
+      >
         {/* Blue center glow */}
         <div className="absolute pointer-events-none" style={{
-          left: '50%', top: '50%', transform: 'translate(-50%,-50%)',
-          width: '800px', height: '500px', borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(0,68,240,0.28) 0%, transparent 65%)',
-          filter: 'blur(80px)',
+          left: '65%', top: '40%', transform: 'translate(-50%,-50%)',
+          width: '900px', height: '600px', borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(0,68,240,0.22) 0%, transparent 65%)',
+          filter: 'blur(100px)',
         }} />
         {/* Pink orb top-right */}
         <div className="absolute pointer-events-none" style={{
-          right: '-60px', top: '-60px',
-          width: '600px', height: '600px', borderRadius: '50%',
-          background: 'radial-gradient(circle at 40% 40%, rgba(255,196,218,0.38) 0%, rgba(255,196,218,0.12) 45%, transparent 68%)',
-          filter: 'blur(70px)',
+          right: '-40px', top: '-40px',
+          width: '650px', height: '650px', borderRadius: '50%',
+          background: 'radial-gradient(circle at 40% 40%, rgba(255,196,218,0.3) 0%, rgba(255,196,218,0.08) 50%, transparent 70%)',
+          filter: 'blur(90px)',
         }} />
-        <div className="absolute inset-0 bg-dot-pattern opacity-40 pointer-events-none" />
+        {/* Yellow bottom-left accent */}
+        <div className="absolute pointer-events-none" style={{
+          left: '-60px', bottom: '-40px',
+          width: '400px', height: '300px', borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(255,204,0,0.1) 0%, transparent 65%)',
+          filter: 'blur(60px)',
+        }} />
+        <div className="absolute inset-0 bg-dot-pattern opacity-30 pointer-events-none" />
 
-        <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
-          <div className="flex items-center gap-2.5 mb-8">
-            <div className="w-4 h-px" style={{ background: 'rgba(255,255,255,0.3)' }} />
-            <span className="text-[10px] font-semibold uppercase" style={{ color: 'rgba(255,255,255,0.5)', letterSpacing: '0.18em' }}>Distribuidora Especializada em Beleza</span>
-            <div className="w-4 h-px" style={{ background: 'rgba(255,255,255,0.3)' }} />
+        <div className="relative max-w-6xl mx-auto px-6" style={{ paddingTop: 'clamp(120px, 13vw, 160px)', paddingBottom: 'clamp(72px, 9vw, 112px)' }}>
+
+          {/* Label */}
+          <div className="flex items-center gap-3 mb-10">
+            <div style={{ width: 28, height: 1.5, background: '#FFCC00', borderRadius: 2 }} />
+            <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
+              Distribuidora Especializada em Beleza
+            </span>
           </div>
 
-          <h1 className="text-white max-w-3xl mb-6"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 300, lineHeight: 1.05, letterSpacing: '-0.03em' }}>
+          {/* Headline */}
+          <h1
+            className="text-white"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2.25rem, 5.5vw, 4.25rem)',
+              fontWeight: 300,
+              lineHeight: 1.04,
+              letterSpacing: '-0.04em',
+              maxWidth: 760,
+              marginBottom: '1.75rem',
+            }}
+          >
             Venda as marcas que seus clientes já{' '}
             <span style={{ color: '#FFCC00', fontWeight: 500 }}>conhecem e pedem</span>
           </h1>
 
-          <div className="text-white/75 text-sm font-medium mb-10 flex flex-wrap gap-x-6 gap-y-2 items-center">
-            <span className="flex items-center gap-2">
-              <Diamond size="sm" />
-              Marcas premium certificadas
-            </span>
-            <span className="flex items-center gap-2">
-              <Diamond size="sm" />
-              Entrega por CD próprio
-            </span>
-            <span className="flex items-center gap-2">
-              <Diamond size="sm" />
-              Suporte comercial presencial
-            </span>
+          {/* Divider */}
+          <div style={{ width: 40, height: 1, background: 'rgba(255,255,255,0.12)', margin: '1.75rem 0' }} />
+
+          {/* Features row */}
+          <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10">
+            {['Marcas premium certificadas', 'Entrega por CD próprio', 'Suporte comercial presencial'].map((item) => (
+              <span key={item} className="flex items-center gap-2.5" style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', fontWeight: 400 }}>
+                <Diamond size="sm" />
+                {item}
+              </span>
+            ))}
           </div>
 
           <StateSelector buttonSize="lg" />
