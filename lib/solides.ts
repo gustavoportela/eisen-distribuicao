@@ -30,7 +30,7 @@ export async function fetchVagas(): Promise<SolidesVaga[]> {
 }
 
 export function vagaUrl(id: number) {
-  return `https://eisen.vagas.solides.com.br/vacancies/${id}?origem=portal`
+  return `https://eisen.vagas.solides.com.br/vaga/${id}`
 }
 
 export function jobTypeLabel(type: string) {
