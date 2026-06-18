@@ -21,8 +21,7 @@ export default function NotFound() {
       <div className="relative z-10 flex flex-col items-center">
         {/* Logo */}
         <Link href="/" className="mb-12 opacity-80 hover:opacity-100 transition-opacity">
-          <Image src="/logos/eisen-logo-white.svg" alt="Eisen" width={120} height={40}
-            onError={() => {}} />
+          <Image src="/logos/eisen-logo-white.svg" alt="Eisen" width={120} height={40} />
         </Link>
 
         {/* 404 */}
