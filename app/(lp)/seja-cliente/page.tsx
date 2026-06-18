@@ -123,8 +123,8 @@ export default function SejaClientePage() {
               marginBottom: '1.75rem',
             }}
           >
-            Venda as marcas que seus clientes já{' '}
-            <span style={{ color: '#FFCC00', fontWeight: 500 }}>conhecem e pedem</span>
+            Amplie seu portfólio com as marcas de beleza mais{' '}
+            <span style={{ color: '#FFCC00', fontWeight: 500 }}>desejadas do Brasil</span>
           </h1>
 
           {/* Divider */}
