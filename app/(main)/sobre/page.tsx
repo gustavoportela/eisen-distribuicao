@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { Diamond } from '@/components/ui/Diamond'
 import { StateSelector } from '@/components/ui/StateSelector'
@@ -59,95 +60,228 @@ export default function SobrePage() {
         className="grain relative overflow-hidden"
         style={{
           background: 'linear-gradient(160deg, #000033 0%, #000055 60%, #00007A 100%)',
-          paddingTop: 'clamp(130px, 14vw, 180px)',
+          paddingTop: 'clamp(120px, 13vw, 160px)',
           paddingBottom: 'clamp(80px, 10vw, 120px)',
         }}
       >
-        {/* Blue center glow */}
+        {/* Glows */}
         <div className="absolute pointer-events-none" style={{
-          left: '60%', top: '30%', transform: 'translate(-50%, -50%)',
-          width: '900px', height: '600px', borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(0,68,240,0.22) 0%, transparent 65%)',
+          left: '55%', top: '20%',
+          width: '800px', height: '800px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(0,68,240,0.18) 0%, transparent 60%)',
           filter: 'blur(100px)',
         }} />
-        {/* Pink orb top-right */}
         <div className="absolute pointer-events-none" style={{
-          right: '-40px', top: '-60px',
-          width: '650px', height: '650px', borderRadius: '50%',
-          background: 'radial-gradient(circle at 40% 40%, rgba(255,196,218,0.32) 0%, rgba(255,196,218,0.08) 50%, transparent 70%)',
+          right: '-60px', top: '-60px',
+          width: '700px', height: '700px', borderRadius: '50%',
+          background: 'radial-gradient(circle at 35% 35%, rgba(255,196,218,0.28) 0%, transparent 65%)',
           filter: 'blur(90px)',
         }} />
-        <div className="absolute inset-0 bg-dot-pattern pointer-events-none opacity-30" />
+        <div className="absolute pointer-events-none" style={{
+          left: '40%', bottom: '-40px',
+          width: '500px', height: '300px', borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(255,204,0,0.07) 0%, transparent 65%)',
+          filter: 'blur(60px)',
+        }} />
+        <div className="absolute inset-0 bg-dot-pattern pointer-events-none opacity-25" />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
-          <SobreAnimations variant="hero">
+        {/* CSS float keyframes */}
+        <style>{`
+          @keyframes floatA { 0%,100%{transform:translateY(0) rotate(-5deg)} 50%{transform:translateY(-10px) rotate(-5deg)} }
+          @keyframes floatB { 0%,100%{transform:translateY(0) rotate(3deg)} 50%{transform:translateY(-14px) rotate(3deg)} }
+          @keyframes floatC { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-8px) rotate(-2deg)} }
+          @keyframes floatD { 0%,100%{transform:translateY(0) rotate(6deg)} 50%{transform:translateY(-12px) rotate(6deg)} }
+          @keyframes floatE { 0%,100%{transform:translateY(0) rotate(-4deg)} 50%{transform:translateY(-9px) rotate(-4deg)} }
+        `}</style>
 
-            {/* Label */}
-            <div className="flex items-center gap-2.5 mb-10">
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#FFCC00" strokeWidth="1.5" strokeLinejoin="round">
-                <path d="M6.5 0.75L12.25 6.5L6.5 12.25L0.75 6.5L6.5 0.75Z" />
-              </svg>
-              <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-                Sobre a Eisen
-              </span>
-            </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-[1fr_420px] gap-16 lg:gap-8 items-center">
 
-            {/* Headline */}
-            <h1
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(2.5rem, 5.5vw, 4.75rem)',
-                fontWeight: 300,
-                lineHeight: 1.02,
-                letterSpacing: '-0.04em',
-                color: '#fff',
-                marginBottom: '1.75rem',
-                maxWidth: 860,
-              }}
-            >
-              Uma distribuidora construída com o propósito de criar relacionamento entre negócios locais e{' '}
-              <span style={{ color: '#FFC4DA', fontWeight: 400 }}>grandes marcas nacionais.</span>
-            </h1>
+            {/* LEFT: Copy */}
+            <SobreAnimations variant="hero">
 
-            {/* Divider */}
-            <div style={{ width: 40, height: 1, background: 'rgba(255,255,255,0.15)', margin: '2rem 0' }} />
+              {/* Label */}
+              <div className="flex items-center gap-2.5 mb-10">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#FFCC00" strokeWidth="1.5" strokeLinejoin="round">
+                  <path d="M6.5 0.75L12.25 6.5L6.5 12.25L0.75 6.5L6.5 0.75Z" />
+                </svg>
+                <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
+                  Sobre a Eisen
+                </span>
+              </div>
 
-            {/* Subtitle + inline stat strip */}
-            <div className="flex flex-col lg:flex-row lg:items-end gap-10">
-              <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.85, maxWidth: 460 }}>
+              {/* Headline */}
+              <h1
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(2.25rem, 4.5vw, 4rem)',
+                  fontWeight: 300,
+                  lineHeight: 1.04,
+                  letterSpacing: '-0.04em',
+                  color: '#fff',
+                  marginBottom: '2rem',
+                }}
+              >
+                Uma distribuidora construída com o propósito de criar relacionamento entre negócios locais e{' '}
+                <span style={{
+                  background: 'linear-gradient(135deg, #FFD6E7 0%, #FFC4DA 40%, #FF9CBE 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  fontWeight: 400,
+                }}>
+                  grandes marcas nacionais.
+                </span>
+              </h1>
+
+              {/* Subtitle */}
+              <p style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.85, maxWidth: 480, marginBottom: '2.5rem' }}>
                 15 anos conectando grandes marcas de cosméticos e beleza aos pontos de venda,
                 com estrutura própria, equipe presencial e compromisso verdadeiro.
               </p>
 
-              <div className="flex items-start gap-8 pb-1 lg:ml-auto lg:shrink-0">
+              {/* Stats strip */}
+              <div style={{ display: 'flex', gap: 0, borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '1.75rem' }}>
                 {[
-                  { val: '15', label: 'Anos' },
-                  { val: '4', label: 'Estados' },
-                  { val: '+15k', label: 'Clientes' },
+                  { val: '15', unit: 'anos', label: 'de mercado' },
+                  { val: '4', unit: 'estados', label: 'de atuação' },
+                  { val: '+15k', unit: 'clientes', label: 'atendidos' },
                 ].map((s, i) => (
-                  <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span style={{
+                  <div key={i} style={{
+                    flex: 1,
+                    paddingRight: '1.5rem',
+                    marginRight: '1.5rem',
+                    borderRight: i < 2 ? '1px solid rgba(255,255,255,0.07)' : 'none',
+                  }}>
+                    <div style={{
                       fontFamily: 'var(--font-display)',
-                      fontSize: 'clamp(1.75rem, 3vw, 2.5rem)',
+                      fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                       fontWeight: 700,
                       color: '#FFCC00',
                       letterSpacing: '-0.05em',
                       lineHeight: 1,
-                    }}>{s.val}</span>
-                    <span style={{
-                      fontSize: '0.625rem',
-                      fontWeight: 500,
-                      color: 'rgba(255,255,255,0.35)',
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      marginTop: 6,
-                    }}>{s.label}</span>
+                    }}>{s.val}</div>
+                    <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.85)', fontWeight: 600, letterSpacing: '0.04em', marginTop: 5 }}>{s.unit}</div>
+                    <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.06em', marginTop: 2 }}>{s.label}</div>
                   </div>
                 ))}
               </div>
+
+            </SobreAnimations>
+
+            {/* RIGHT: Floating brand cards */}
+            <div className="hidden lg:block relative" style={{ height: 500 }}>
+
+              {/* Wella */}
+              <div style={{
+                position: 'absolute', top: '4%', left: '8%',
+                animation: 'floatA 5.5s ease-in-out infinite',
+                background: 'rgba(255,255,255,0.06)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                borderRadius: 16,
+                padding: '14px 18px',
+                display: 'flex', alignItems: 'center', gap: 12,
+                boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+              }}>
+                <div style={{ width: 36, height: 36, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+                  <Image src="/logos/wella.svg" alt="Wella" width={28} height={28} style={{ objectFit: 'contain' }} />
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#fff', lineHeight: 1.2 }}>Wella Professionals</div>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>Cuidados capilares</div>
+                </div>
+              </div>
+
+              {/* Dailus */}
+              <div style={{
+                position: 'absolute', top: '26%', right: '4%',
+                animation: 'floatB 6.2s ease-in-out infinite 0.8s',
+                background: 'rgba(255,255,255,0.06)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                borderRadius: 16,
+                padding: '14px 18px',
+                display: 'flex', alignItems: 'center', gap: 12,
+                boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+              }}>
+                <div style={{ width: 36, height: 36, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+                  <Image src="/logos/dailus.png" alt="Dailus" width={28} height={28} style={{ objectFit: 'contain' }} />
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#fff', lineHeight: 1.2 }}>Dailus</div>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>Esmaltes & maquiagem</div>
+                </div>
+              </div>
+
+              {/* Felps */}
+              <div style={{
+                position: 'absolute', top: '50%', left: '2%',
+                animation: 'floatC 5.8s ease-in-out infinite 1.4s',
+                background: 'rgba(255,255,255,0.06)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                borderRadius: 16,
+                padding: '14px 18px',
+                display: 'flex', alignItems: 'center', gap: 12,
+                boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+              }}>
+                <div style={{ width: 36, height: 36, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+                  <Image src="/logos/felps.png" alt="Felps" width={28} height={28} style={{ objectFit: 'contain' }} />
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#fff', lineHeight: 1.2 }}>Felps Profissional</div>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>Tratamento capilar</div>
+                </div>
+              </div>
+
+              {/* Parfum */}
+              <div style={{
+                position: 'absolute', bottom: '16%', right: '8%',
+                animation: 'floatD 7s ease-in-out infinite 0.4s',
+                background: 'rgba(255,255,255,0.06)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                borderRadius: 16,
+                padding: '14px 18px',
+                display: 'flex', alignItems: 'center', gap: 12,
+                boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+              }}>
+                <div style={{ width: 36, height: 36, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+                  <Image src="/logos/parfum.png" alt="Parfum Brasil" width={28} height={28} style={{ objectFit: 'contain' }} />
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#fff', lineHeight: 1.2 }}>Parfum Brasil</div>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>Perfumaria</div>
+                </div>
+              </div>
+
+              {/* L'Oréal — mini pill */}
+              <div style={{
+                position: 'absolute', top: '12%', right: '12%',
+                animation: 'floatE 6.5s ease-in-out infinite 2s',
+                background: 'rgba(255,204,0,0.1)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255,204,0,0.2)',
+                borderRadius: 40,
+                padding: '8px 14px',
+                display: 'flex', alignItems: 'center', gap: 8,
+                boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+              }}>
+                <Image src="/logos/loreal.svg" alt="L'Oréal" width={54} height={18} style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.85 }} />
+              </div>
+
+              {/* Center glow behind cards */}
+              <div style={{
+                position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)',
+                width: 300, height: 300, borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(255,196,218,0.12) 0%, transparent 70%)',
+                filter: 'blur(40px)',
+                pointerEvents: 'none',
+              }} />
             </div>
 
-          </SobreAnimations>
+          </div>
         </div>
       </section>
 
