@@ -134,7 +134,10 @@ export default function SejaClientePage() {
           <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10">
             {['Marcas premium certificadas', 'Entrega por CD próprio', 'Suporte comercial presencial'].map((item) => (
               <span key={item} className="flex items-center gap-2.5" style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', fontWeight: 400 }}>
-                <Diamond size="sm" />
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#FFCC00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="7" cy="7" r="5.5" />
+                  <polyline points="4.5,7 6.2,8.8 9.5,5.2" />
+                </svg>
                 {item}
               </span>
             ))}
