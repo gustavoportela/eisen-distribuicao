@@ -172,124 +172,7 @@ export default async function TrabalheConoscoPage() {
         </div>
       </section>
 
-      {/* ── 2. PILARES DA CULTURA ────────────────────────────────────── */}
-      <section style={{ backgroundColor: '#F4F4F8' }} className="py-28">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <TrabalheAnimations variant="fadeUp">
-            <div className="mb-7">
-              <SectionLabel variant="line">Nossa cultura</SectionLabel>
-            </div>
-            <h2
-              className="mb-16 max-w-[460px]"
-              style={{
-                fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
-                fontWeight: 300,
-                letterSpacing: '-1px',
-                lineHeight: 1.06,
-                color: '#08084A',
-                fontFamily: 'var(--font-display)',
-              }}
-            >
-              Os três pilares que nos guiam
-            </h2>
-          </TrabalheAnimations>
-
-          <div
-            className="grid sm:grid-cols-3 gap-px rounded-2xl overflow-hidden"
-            style={{ background: 'rgba(0,0,102,0.07)' }}
-          >
-            {PILARES.map((pilar, i) => (
-              <TrabalheAnimations key={pilar.title} variant="fadeUp" delay={i * 0.08}>
-                <div className="group relative bg-white overflow-hidden cursor-default h-full">
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[2px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
-                    style={{ background: pilar.accent }}
-                  />
-                  <div
-                    className="absolute top-[10px] right-[10px] font-extrabold leading-none select-none pointer-events-none text-[10px] uppercase"
-                    style={{ letterSpacing: '0.14em', color: 'rgba(0,0,0,0.18)', fontFamily: 'var(--font-display)' }}
-                  >
-                    {pilar.num}
-                  </div>
-                  <div className="p-10 flex flex-col gap-5">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                      style={{ background: pilar.iconBg, color: pilar.iconColor }}
-                    >
-                      {pilar.icon}
-                    </div>
-                    <div>
-                      <h3
-                        className="font-bold text-lg mb-2"
-                        style={{ color: '#0C0C14', fontFamily: 'var(--font-display)' }}
-                      >
-                        {pilar.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed" style={{ color: '#78787E' }}>{pilar.desc}</p>
-                    </div>
-                  </div>
-                </div>
-              </TrabalheAnimations>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── 3. PROCESSO SELETIVO ─────────────────────────────────────── */}
-      <section className="bg-white py-28 border-b border-eisen-border">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <TrabalheAnimations variant="fadeUp">
-            <div className="mb-7">
-              <SectionLabel variant="line">Como funciona</SectionLabel>
-            </div>
-            <h2
-              className="mb-16 max-w-[460px]"
-              style={{
-                fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
-                fontWeight: 300,
-                letterSpacing: '-1px',
-                lineHeight: 1.06,
-                color: '#08084A',
-                fontFamily: 'var(--font-display)',
-              }}
-            >
-              Nosso processo seletivo
-            </h2>
-          </TrabalheAnimations>
-
-          <div className="relative">
-            <div className="absolute hidden lg:block" style={{ top: 28, left: '12.5%', right: '12.5%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(0,0,102,0.12) 15%, rgba(0,0,102,0.12) 85%, transparent)' }} />
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-              {PROCESSO.map((p, i) => (
-                <TrabalheAnimations key={p.step} variant="fadeUp" delay={i * 0.1}>
-                  <div className="flex flex-col gap-5">
-                    <div className="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-0">
-                      <div className="relative z-10 shrink-0">
-                        <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: '#F4F4F8', border: '1.5px solid rgba(0,0,102,0.1)', boxShadow: '0 2px 12px rgba(0,0,102,0.06)' }}>
-                          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#000066', color: '#FFCC00' }}>
-                            {p.icon}
-                          </div>
-                        </div>
-                      </div>
-                      <span className="text-[10px] font-bold uppercase tracking-widest lg:mt-4" style={{ color: 'rgba(0,0,102,0.35)' }}>
-                        Etapa {p.step}
-                      </span>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2" style={{ color: '#0C0C14', fontFamily: 'var(--font-display)' }}>
-                        {p.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed" style={{ color: '#78787E' }}>{p.desc}</p>
-                    </div>
-                  </div>
-                </TrabalheAnimations>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4. VAGAS ABERTAS ─────────────────────────────────────────── */}
+      {/* ── 2. VAGAS ABERTAS ─────────────────────────────────────────── */}
       <section className="bg-white py-28 border-b border-eisen-border">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
 
@@ -494,6 +377,123 @@ export default async function TrabalheConoscoPage() {
               </div>
             </a>
           </TrabalheAnimations>
+        </div>
+      </section>
+
+      {/* ── 3. PILARES DA CULTURA ────────────────────────────────────── */}
+      <section style={{ backgroundColor: '#F4F4F8' }} className="py-28">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <TrabalheAnimations variant="fadeUp">
+            <div className="mb-7">
+              <SectionLabel variant="line">Nossa cultura</SectionLabel>
+            </div>
+            <h2
+              className="mb-16 max-w-[460px]"
+              style={{
+                fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
+                fontWeight: 300,
+                letterSpacing: '-1px',
+                lineHeight: 1.06,
+                color: '#08084A',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              Os três pilares que nos guiam
+            </h2>
+          </TrabalheAnimations>
+
+          <div
+            className="grid sm:grid-cols-3 gap-px rounded-2xl overflow-hidden"
+            style={{ background: 'rgba(0,0,102,0.07)' }}
+          >
+            {PILARES.map((pilar, i) => (
+              <TrabalheAnimations key={pilar.title} variant="fadeUp" delay={i * 0.08}>
+                <div className="group relative bg-white overflow-hidden cursor-default h-full">
+                  <div
+                    className="absolute top-0 left-0 right-0 h-[2px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                    style={{ background: pilar.accent }}
+                  />
+                  <div
+                    className="absolute top-[10px] right-[10px] font-extrabold leading-none select-none pointer-events-none text-[10px] uppercase"
+                    style={{ letterSpacing: '0.14em', color: 'rgba(0,0,0,0.18)', fontFamily: 'var(--font-display)' }}
+                  >
+                    {pilar.num}
+                  </div>
+                  <div className="p-10 flex flex-col gap-5">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background: pilar.iconBg, color: pilar.iconColor }}
+                    >
+                      {pilar.icon}
+                    </div>
+                    <div>
+                      <h3
+                        className="font-bold text-lg mb-2"
+                        style={{ color: '#0C0C14', fontFamily: 'var(--font-display)' }}
+                      >
+                        {pilar.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed" style={{ color: '#78787E' }}>{pilar.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </TrabalheAnimations>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. PROCESSO SELETIVO ─────────────────────────────────────── */}
+      <section className="bg-white py-28 border-b border-eisen-border">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <TrabalheAnimations variant="fadeUp">
+            <div className="mb-7">
+              <SectionLabel variant="line">Como funciona</SectionLabel>
+            </div>
+            <h2
+              className="mb-16 max-w-[460px]"
+              style={{
+                fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
+                fontWeight: 300,
+                letterSpacing: '-1px',
+                lineHeight: 1.06,
+                color: '#08084A',
+                fontFamily: 'var(--font-display)',
+              }}
+            >
+              Nosso processo seletivo
+            </h2>
+          </TrabalheAnimations>
+
+          <div className="relative">
+            <div className="absolute hidden lg:block" style={{ top: 28, left: '12.5%', right: '12.5%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(0,0,102,0.12) 15%, rgba(0,0,102,0.12) 85%, transparent)' }} />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+              {PROCESSO.map((p, i) => (
+                <TrabalheAnimations key={p.step} variant="fadeUp" delay={i * 0.1}>
+                  <div className="flex flex-col gap-5">
+                    <div className="flex items-center gap-4 lg:flex-col lg:items-start lg:gap-0">
+                      <div className="relative z-10 shrink-0">
+                        <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: '#F4F4F8', border: '1.5px solid rgba(0,0,102,0.1)', boxShadow: '0 2px 12px rgba(0,0,102,0.06)' }}>
+                          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#000066', color: '#FFCC00' }}>
+                            {p.icon}
+                          </div>
+                        </div>
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest lg:mt-4" style={{ color: 'rgba(0,0,102,0.35)' }}>
+                        Etapa {p.step}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2" style={{ color: '#0C0C14', fontFamily: 'var(--font-display)' }}>
+                        {p.title}
+                      </h3>
+                      <p className="text-sm leading-relaxed" style={{ color: '#78787E' }}>{p.desc}</p>
+                    </div>
+                  </div>
+                </TrabalheAnimations>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
