@@ -101,9 +101,11 @@ export default function SejaClientePage() {
         <div className="relative max-w-6xl mx-auto px-6" style={{ paddingTop: 'clamp(120px, 13vw, 160px)', paddingBottom: 'clamp(72px, 9vw, 112px)' }}>
 
           {/* Label */}
-          <div className="flex items-center gap-3 mb-10">
-            <div style={{ width: 28, height: 1.5, background: '#FFCC00', borderRadius: 2 }} />
-            <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
+          <div className="flex items-center gap-2.5 mb-10">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="#FFCC00" strokeWidth="1.5" strokeLinejoin="round">
+              <path d="M6.5 0.75L12.25 6.5L6.5 12.25L0.75 6.5L6.5 0.75Z" />
+            </svg>
+            <span style={{ fontSize: '0.7rem', fontWeight: 600, color: 'rgba(255,255,255,0.9)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
               Distribuidora Especializada em Beleza
             </span>
           </div>
