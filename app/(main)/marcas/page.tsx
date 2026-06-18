@@ -70,13 +70,13 @@ export default function MarcasPage() {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2.25rem, 5vw, 3.75rem)',
-                fontWeight: 700,
+                fontWeight: 300,
                 lineHeight: 1.05,
                 letterSpacing: '-0.03em',
               }}
             >
               As marcas que seus clientes{' '}
-              <span style={{ color: '#FFCC00' }}>já pedem</span>
+              <span style={{ color: '#FFCC00', fontWeight: 500 }}>já pedem</span>
             </h1>
 
             <p
@@ -153,7 +153,7 @@ export default function MarcasPage() {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2.25rem, 4vw, 3.125rem)',
-                fontWeight: 700,
+                fontWeight: 300,
                 lineHeight: 1.06,
                 letterSpacing: '-0.03em',
               }}

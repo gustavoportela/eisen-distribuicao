@@ -105,13 +105,13 @@ export default async function TrabalheConoscoPage() {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(2.25rem, 5.5vw, 4rem)',
-                fontWeight: 700,
+                fontWeight: 300,
                 lineHeight: 1.0,
                 letterSpacing: '-0.035em',
               }}
             >
               Faça parte da equipe que{' '}
-              <span style={{ color: '#FFCC00' }}>conecta marcas e negócios</span>
+              <span style={{ color: '#FFCC00', fontWeight: 500 }}>conecta marcas e negócios</span>
             </h1>
 
             <p className="text-white/75 text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -260,7 +260,7 @@ export default async function TrabalheConoscoPage() {
                   <div className="flex-1 text-center lg:text-left">
                     <h3
                       className="mb-2"
-                      style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 700, color: '#0C0C14' }}
+                      style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 300, color: '#0C0C14' }}
                     >
                       Nenhuma vaga aberta no momento
                     </h3>
@@ -356,7 +356,7 @@ export default async function TrabalheConoscoPage() {
                 <h3 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: 'clamp(1.25rem, 2vw, 1.625rem)',
-                  fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.3, color: '#fff',
+                  fontWeight: 300, letterSpacing: '-0.03em', lineHeight: 1.3, color: '#fff',
                   display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '0.55em',
                 }}>
                   Portal de carreiras da Eisen na

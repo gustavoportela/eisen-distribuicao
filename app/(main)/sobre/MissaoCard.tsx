@@ -62,7 +62,7 @@ export function MissaoCard() {
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full"
             style={{ background: 'rgba(255,204,0,0.1)', border: '1px solid rgba(255,204,0,0.22)' }}
           >
-            <span style={{ fontSize: '0.625rem', fontWeight: 700, color: '#FFCC00', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '0.625rem', fontWeight: 500, color: '#FFCC00', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
               Desde 2011
             </span>
           </div>
@@ -72,7 +72,7 @@ export function MissaoCard() {
         <div>
           <span
             className="block mb-4"
-            style={{ fontSize: '0.625rem', fontWeight: 700, color: '#FFCC00', letterSpacing: '0.22em', textTransform: 'uppercase' }}
+            style={{ fontSize: '0.625rem', fontWeight: 500, color: '#FFCC00', letterSpacing: '0.22em', textTransform: 'uppercase' }}
           >
             Nossa missão
           </span>

@@ -299,7 +299,7 @@ export default function PrivacidadePage() {
                   cursor: 'pointer',
                   fontFamily: 'var(--font-display)',
                   fontSize: '1rem',
-                  fontWeight: 700,
+                  fontWeight: 300,
                   color: '#08084A',
                   letterSpacing: '-0.02em',
                   listStyle: 'none',

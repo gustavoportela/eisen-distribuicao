@@ -58,7 +58,7 @@ export function CommercialCTA() {
           className="text-white mb-5"
           style={{
             fontSize: 'clamp(2.25rem, 4.5vw, 3.25rem)',
-            fontWeight: 700,
+            fontWeight: 300,
             letterSpacing: '-0.03em',
             lineHeight: 1.05,
             fontFamily: 'var(--font-display)',

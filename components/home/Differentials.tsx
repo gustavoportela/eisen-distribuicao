@@ -210,7 +210,7 @@ export function Differentials() {
                   className="mb-3"
                   style={{
                     fontSize: '1.125rem',
-                    fontWeight: 700,
+                    fontWeight: 300,
                     letterSpacing: '-0.025em',
                     lineHeight: 1.3,
                     color: '#0C0C14',

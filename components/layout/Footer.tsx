@@ -139,7 +139,7 @@ export function Footer() {
               style={{
                 fontFamily: 'var(--font-display)',
                 fontSize: 'clamp(1.375rem, 2.2vw, 1.75rem)',
-                fontWeight: 700,
+                fontWeight: 300,
                 lineHeight: 1.2,
                 letterSpacing: '-0.03em',
                 color: '#ffffff',
@@ -147,7 +147,7 @@ export function Footer() {
               }}
             >
               As marcas que seus clientes{' '}
-              <em style={{ fontStyle: 'italic', fontWeight: 400, color: '#FFCC00' }}>
+              <em style={{ fontStyle: 'italic', fontWeight: 500, color: '#FFCC00' }}>
                 já pedem.
               </em>
             </h3>

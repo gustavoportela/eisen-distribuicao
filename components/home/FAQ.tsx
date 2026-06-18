@@ -52,7 +52,7 @@ export function FAQ() {
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(2rem, 3.6vw, 3.25rem)',
-              fontWeight: 700,
+              fontWeight: 300,
               lineHeight: 1.06,
               letterSpacing: '-0.04em',
               color: '#08084A',
