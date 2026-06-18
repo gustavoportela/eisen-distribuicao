@@ -1,6 +1,7 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { FloatingWhatsapp } from '@/components/layout/FloatingWhatsapp'
+import { LGPDBanner } from '@/components/layout/LGPDBanner'
 import { MotionProvider } from '@/components/providers/MotionProvider'
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
@@ -10,6 +11,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
       <main className="flex-1">{children}</main>
       <Footer />
       <FloatingWhatsapp />
+      <LGPDBanner />
     </MotionProvider>
   )
 }

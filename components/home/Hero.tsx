@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { m } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import { RotatingBadge } from '@/components/ui/RotatingBadge'
 
 // Spring só para whileHover nos cards — não roda no mount
@@ -19,6 +20,48 @@ const STATS_DESKTOP = [
   { num: '4',       label: 'Estados de\natuação', accent: '#FFC4DA' },
   { num: '+15 mil', label: 'Clientes\natendidos', accent: '#000066' },
 ]
+
+function parseNum(str: string): { prefix: string; value: number; suffix: string } {
+  const m = str.match(/^([+]?)(\d+)(.*)$/)
+  if (!m) return { prefix: '', value: 0, suffix: str }
+  return { prefix: m[1], value: parseInt(m[2]), suffix: m[3] }
+}
+
+function CountUp({ num, style }: { num: string; style?: React.CSSProperties }) {
+  const { prefix, value, suffix } = parseNum(num)
+  const [display, setDisplay] = useState(0)
+  const ref = useRef<HTMLSpanElement>(null)
+  const started = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !started.current) {
+        started.current = true
+        const duration = 1400
+        const start = performance.now()
+        function tick(now: number) {
+          const elapsed = now - start
+          const progress = Math.min(elapsed / duration, 1)
+          // easeOutExpo
+          const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress)
+          setDisplay(Math.round(ease * value))
+          if (progress < 1) requestAnimationFrame(tick)
+        }
+        requestAnimationFrame(tick)
+      }
+    }, { threshold: 0.3 })
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [value])
+
+  return (
+    <span ref={ref} style={style}>
+      {prefix}{display}{suffix}
+    </span>
+  )
+}
 
 export function Hero() {
   return (
@@ -99,16 +142,14 @@ export function Hero() {
             {STATS_MOBILE.map((s, i) => (
               <div key={i} className="flex flex-col">
                 <div style={{ height: 2, width: 24, borderRadius: 2, background: s.accent, marginBottom: 8 }} />
-                <span style={{
+                <CountUp num={s.num} style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: 'clamp(1.375rem, 5vw, 1.75rem)',
                   fontWeight: 800,
                   letterSpacing: '-0.05em',
                   lineHeight: 1,
                   color: '#ffffff',
-                }}>
-                  {s.num}
-                </span>
+                }} />
                 <span style={{
                   fontSize: '0.625rem',
                   fontWeight: 500,
@@ -203,16 +244,14 @@ export function Hero() {
               {STATS_DESKTOP.map((s, i) => (
                 <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
                   <div style={{ height: 3, width: 32, borderRadius: 2, background: s.accent, marginBottom: 10 }} />
-                  <span style={{
+                  <CountUp num={s.num} style={{
                     fontFamily: 'var(--font-display)',
                     fontSize: 'clamp(2rem, 3vw, 2.875rem)',
                     fontWeight: 800,
                     letterSpacing: '-0.05em',
                     lineHeight: 1,
                     color: '#08084A',
-                  }}>
-                    {s.num}
-                  </span>
+                  }} />
                   <span style={{
                     fontSize: '0.6875rem',
                     fontWeight: 400,
