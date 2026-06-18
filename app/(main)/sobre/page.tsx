@@ -169,115 +169,107 @@ export default function SobrePage() {
 
             </SobreAnimations>
 
-            {/* RIGHT: Floating brand cards */}
+            {/* RIGHT: Floating brand composition */}
             <div className="hidden lg:block relative" style={{ height: 500 }}>
 
-              {/* Wella */}
+              {/* ANCHOR — Wella grande, levemente inclinado, alta opacidade */}
               <div style={{
-                position: 'absolute', top: '4%', left: '8%',
-                animation: 'floatA 5.5s ease-in-out infinite',
-                background: 'rgba(255,255,255,0.06)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                borderRadius: 16,
-                padding: '14px 18px',
-                display: 'flex', alignItems: 'center', gap: 12,
-                boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+                position: 'absolute', top: '6%', left: '0%',
+                animation: 'floatA 6s ease-in-out infinite',
+                background: 'rgba(255,255,255,0.09)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255,255,255,0.16)',
+                borderRadius: 20,
+                padding: '18px 22px',
+                display: 'flex', alignItems: 'center', gap: 16,
+                boxShadow: '0 16px 48px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1)',
+                width: 260,
               }}>
-                <div style={{ width: 36, height: 36, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
-                  <Image src="/logos/wella.svg" alt="Wella" width={28} height={28} style={{ objectFit: 'contain' }} />
+                <div style={{ width: 48, height: 48, borderRadius: 12, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+                  <Image src="/logos/wella.svg" alt="Wella" width={36} height={36} style={{ objectFit: 'contain' }} />
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#fff', lineHeight: 1.2 }}>Wella Professionals</div>
-                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>Cuidados capilares</div>
+                  <div style={{ fontSize: '0.875rem', fontWeight: 600, color: '#fff', lineHeight: 1.25 }}>Wella Professionals</div>
+                  <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)', marginTop: 3 }}>Cuidados capilares</div>
                 </div>
               </div>
 
-              {/* Dailus */}
+              {/* STAT CHIP — métrica compacta, rotação oposta */}
               <div style={{
-                position: 'absolute', top: '26%', right: '4%',
-                animation: 'floatB 6.2s ease-in-out infinite 0.8s',
-                background: 'rgba(255,255,255,0.06)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                borderRadius: 16,
-                padding: '14px 18px',
-                display: 'flex', alignItems: 'center', gap: 12,
-                boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+                position: 'absolute', top: '5%', right: '6%',
+                animation: 'floatB 5.2s ease-in-out infinite 1.1s',
+                background: 'rgba(255,204,0,0.1)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255,204,0,0.22)',
+                borderRadius: 40,
+                padding: '10px 16px',
+                display: 'flex', alignItems: 'center', gap: 8,
+                boxShadow: '0 6px 20px rgba(0,0,0,0.2)',
               }}>
-                <div style={{ width: 36, height: 36, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+                <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#FFCC00', boxShadow: '0 0 6px #FFCC00' }} />
+                <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'rgba(255,204,0,0.9)', letterSpacing: '0.02em' }}>+15 mil clientes ativos</span>
+              </div>
+
+              {/* DAILUS — card médio, rotação positiva */}
+              <div style={{
+                position: 'absolute', top: '32%', right: '2%',
+                animation: 'floatC 6.8s ease-in-out infinite 0.5s',
+                background: 'rgba(255,255,255,0.06)',
+                backdropFilter: 'blur(14px)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderRadius: 16,
+                padding: '14px 16px',
+                display: 'flex', alignItems: 'center', gap: 12,
+                boxShadow: '0 8px 28px rgba(0,0,0,0.28)',
+                width: 210,
+              }}>
+                <div style={{ width: 38, height: 38, borderRadius: 10, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
                   <Image src="/logos/dailus.png" alt="Dailus" width={28} height={28} style={{ objectFit: 'contain' }} />
                 </div>
                 <div>
                   <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#fff', lineHeight: 1.2 }}>Dailus</div>
-                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>Esmaltes & maquiagem</div>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.38)', marginTop: 2 }}>Esmaltes & maquiagem</div>
                 </div>
               </div>
 
-              {/* Felps */}
+              {/* PARFUM — card médio, sobrepõe levemente Dailus */}
               <div style={{
-                position: 'absolute', top: '50%', left: '2%',
-                animation: 'floatC 5.8s ease-in-out infinite 1.4s',
+                position: 'absolute', top: '56%', right: '14%',
+                animation: 'floatD 5.9s ease-in-out infinite 1.8s',
                 background: 'rgba(255,255,255,0.06)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                backdropFilter: 'blur(14px)',
+                border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: 16,
-                padding: '14px 18px',
+                padding: '14px 16px',
                 display: 'flex', alignItems: 'center', gap: 12,
-                boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+                boxShadow: '0 8px 28px rgba(0,0,0,0.28)',
+                width: 200,
               }}>
-                <div style={{ width: 36, height: 36, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
-                  <Image src="/logos/felps.png" alt="Felps" width={28} height={28} style={{ objectFit: 'contain' }} />
-                </div>
-                <div>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#fff', lineHeight: 1.2 }}>Felps Profissional</div>
-                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>Tratamento capilar</div>
-                </div>
-              </div>
-
-              {/* Parfum */}
-              <div style={{
-                position: 'absolute', bottom: '16%', right: '8%',
-                animation: 'floatD 7s ease-in-out infinite 0.4s',
-                background: 'rgba(255,255,255,0.06)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                borderRadius: 16,
-                padding: '14px 18px',
-                display: 'flex', alignItems: 'center', gap: 12,
-                boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
-              }}>
-                <div style={{ width: 36, height: 36, borderRadius: 8, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+                <div style={{ width: 38, height: 38, borderRadius: 10, background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
                   <Image src="/logos/parfum.png" alt="Parfum Brasil" width={28} height={28} style={{ objectFit: 'contain' }} />
                 </div>
                 <div>
                   <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#fff', lineHeight: 1.2 }}>Parfum Brasil</div>
-                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.45)', marginTop: 2 }}>Perfumaria</div>
+                  <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.38)', marginTop: 2 }}>Perfumaria</div>
                 </div>
               </div>
 
-              {/* L'Oréal — mini pill */}
+              {/* MINI LABEL — só texto, quebrando o padrão de cards */}
               <div style={{
-                position: 'absolute', top: '12%', right: '12%',
-                animation: 'floatE 6.5s ease-in-out infinite 2s',
-                background: 'rgba(255,204,0,0.1)',
-                backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(255,204,0,0.2)',
-                borderRadius: 40,
-                padding: '8px 14px',
+                position: 'absolute', bottom: '10%', left: '4%',
+                animation: 'floatE 7.2s ease-in-out infinite 0.9s',
                 display: 'flex', alignItems: 'center', gap: 8,
-                boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
               }}>
-                <Image src="/logos/loreal.svg" alt="L'Oréal" width={54} height={18} style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.85 }} />
+                <Image src="/logos/loreal.svg" alt="L'Oréal" width={58} height={20} style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.3 }} />
+                <span style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>e mais</span>
               </div>
 
-              {/* Center glow behind cards */}
+              {/* Glow central sutil */}
               <div style={{
-                position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)',
-                width: 300, height: 300, borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(255,196,218,0.12) 0%, transparent 70%)',
-                filter: 'blur(40px)',
-                pointerEvents: 'none',
+                position: 'absolute', top: '45%', left: '45%', transform: 'translate(-50%,-50%)',
+                width: 280, height: 280, borderRadius: '50%',
+                background: 'radial-gradient(circle, rgba(255,196,218,0.1) 0%, transparent 70%)',
+                filter: 'blur(50px)', pointerEvents: 'none',
               }} />
             </div>
 
