@@ -36,7 +36,14 @@ export function CurriculoForm() {
     e.preventDefault()
     setFormState('submitting')
     const result = await enviarCurriculo(form)
-    setFormState(result.ok ? 'success' : 'error')
+    if (result.ok) {
+      setFormState('success')
+      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        ;(window as any).gtag('event', 'conversion', { send_to: 'AW-18164963915/0VT9CMmD768cEMu03dVD' })
+      }
+    } else {
+      setFormState('error')
+    }
   }
 
   if (formState === 'success') {

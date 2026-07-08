@@ -70,6 +70,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
       </body>
 
+      {/* Google Ads tag */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-18164963915"
+        strategy="afterInteractive"
+      />
+      <Script id="google-ads-tag" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18164963915');
+        `}
+      </Script>
+
       {/* Meta Pixel — lazyOnload: carrega após tudo, não bloqueia LCP/TBT */}
       <Script id="meta-pixel" strategy="lazyOnload">
         {`
