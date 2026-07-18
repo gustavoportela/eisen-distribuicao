@@ -1,4 +1,4 @@
-const CENTRAL = '5551897572372'
+const CENTRAL = '555189757372'
 
 export const WHATSAPP = {
   RS: { number: CENTRAL, label: 'Rio Grande do Sul', city: 'Santa Cruz do Sul' },
