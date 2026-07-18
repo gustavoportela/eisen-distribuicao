@@ -1,7 +1,9 @@
+const CENTRAL = '5551897572372'
+
 export const WHATSAPP = {
-  RS: { number: '5551999953219', label: 'Rio Grande do Sul', city: 'Santa Cruz do Sul' },
-  SC: { number: '5551992536292', label: 'Santa Catarina',    city: 'Içara' },
-  PR: { number: '5541988300098', label: 'Paraná',            city: 'Curitiba' },
+  RS: { number: CENTRAL, label: 'Rio Grande do Sul', city: 'Santa Cruz do Sul' },
+  SC: { number: CENTRAL, label: 'Santa Catarina',    city: 'Içara' },
+  PR: { number: CENTRAL, label: 'Paraná',            city: 'Curitiba' },
 } as const
 
 export type State = keyof typeof WHATSAPP
