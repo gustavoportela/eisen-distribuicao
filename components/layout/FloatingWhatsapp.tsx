@@ -11,6 +11,9 @@ export function FloatingWhatsapp() {
 
   const handleContact = () => {
     if (typeof fbq !== 'undefined') fbq('track', 'Lead', { estado: selected })
+    if (typeof (window as any).gtag === 'function') {
+      ;(window as any).gtag('event', 'whatsapp_click', { event_category: 'contato', event_label: selected })
+    }
     window.open(wppLink(selected), '_blank', 'noopener,noreferrer')
     setOpen(false)
   }

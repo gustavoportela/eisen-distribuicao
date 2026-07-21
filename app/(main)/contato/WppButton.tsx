@@ -37,6 +37,11 @@ export function WppButton({ state, comingSoon }: WppButtonProps) {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => {
+        if (typeof (window as any).gtag === 'function') {
+          ;(window as any).gtag('event', 'whatsapp_click', { event_category: 'contato', event_label: state })
+        }
+      }}
       className="flex items-center gap-2 justify-center px-5 py-3 rounded-lg text-sm font-bold text-eisen-navy bg-eisen-yellow hover:bg-eisen-yellow-dark transition-colors duration-150 cursor-pointer"
     >
       <WhatsAppIcon />
