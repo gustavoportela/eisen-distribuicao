@@ -354,11 +354,10 @@ export default async function TrabalheConoscoPage() {
                       background: '#fff', borderRadius: '10px',
                       padding: '6px 18px', lineHeight: 1,
                       boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
-                      fontWeight: 700, fontSize: '0.85em', color: '#1A1A2E',
-                      letterSpacing: '-0.02em',
                     }}
                   >
-                    Bizneo
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/logos/bizneo.svg" alt="Bizneo" style={{ height: '0.95em', width: 'auto', display: 'block' }} />
                   </span>
                 </h3>
               </div>
