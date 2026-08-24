@@ -4,7 +4,7 @@ import { Diamond } from '@/components/ui/Diamond'
 import { CurriculoForm } from './CurriculoForm'
 import { TrabalheAnimations } from './TrabalheAnimations'
 import { wppLink } from '@/lib/whatsapp'
-import { fetchVagas } from '@/lib/solides'
+import { fetchVagasBizneo } from '@/lib/bizneo'
 import { VagasFilter } from './VagasFilter'
 
 export const revalidate = 3600
@@ -18,7 +18,7 @@ const PROCESSO = [
   {
     step: '01',
     title: 'Candidatura',
-    desc: 'Envie seu currículo pelo formulário ou candidate-se diretamente em uma vaga no portal Solides.',
+    desc: 'Envie seu currículo pelo formulário ou candidate-se diretamente em uma vaga no portal Bizneo.',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
@@ -112,7 +112,7 @@ const PILARES = [
 
 export default async function TrabalheConoscoPage() {
   const wppRS = wppLink('RS')
-  const vagas = await fetchVagas()
+  const vagas = await fetchVagasBizneo()
 
   return (
     <>
@@ -256,7 +256,7 @@ export default async function TrabalheConoscoPage() {
                     </p>
                   </div>
                   <a
-                    href="https://eisen.vagas.solides.com.br"
+                    href="https://grupo-eisen.careers.ats.bizneo.cloud/jobs"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="shrink-0 inline-flex items-center gap-2 font-semibold px-6 py-3 hover:opacity-90 transition-opacity whitespace-nowrap"
@@ -316,7 +316,7 @@ export default async function TrabalheConoscoPage() {
               }
             `}</style>
             <a
-              href="https://eisen.vagas.solides.com.br"
+              href="https://grupo-eisen.careers.ats.bizneo.cloud/jobs"
               target="_blank"
               rel="noopener noreferrer"
               className="portal-banner relative flex flex-col sm:flex-row items-center justify-between gap-8 overflow-hidden"
@@ -354,10 +354,11 @@ export default async function TrabalheConoscoPage() {
                       background: '#fff', borderRadius: '10px',
                       padding: '6px 18px', lineHeight: 1,
                       boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
+                      fontWeight: 700, fontSize: '0.85em', color: '#1A1A2E',
+                      letterSpacing: '-0.02em',
                     }}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/logos/solides.webp" alt="Solides" style={{ height: '0.95em', width: 'auto', display: 'block' }} />
+                    Bizneo
                   </span>
                 </h3>
               </div>

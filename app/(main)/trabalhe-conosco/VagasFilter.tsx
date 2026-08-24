@@ -1,11 +1,10 @@
 'use client'
 
 import { useState, useMemo, useRef, useEffect } from 'react'
-import { type SolidesVaga } from '@/lib/solides'
-import { vagaUrl, jobTypeLabel } from '@/lib/solides'
+import { type BizneVaga } from '@/lib/bizneo'
 
 interface Props {
-  vagas: SolidesVaga[]
+  vagas: BizneVaga[]
 }
 
 interface LocalItem {
@@ -17,7 +16,7 @@ function LocalDropdown({ locais, value, onChange, vagas }: {
   locais: LocalItem[]
   value: string
   onChange: (v: string) => void
-  vagas: SolidesVaga[]
+  vagas: BizneVaga[]
 }) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -34,7 +33,6 @@ function LocalDropdown({ locais, value, onChange, vagas }: {
 
   return (
     <div ref={ref} className="relative">
-      {/* Trigger */}
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
@@ -46,7 +44,6 @@ function LocalDropdown({ locais, value, onChange, vagas }: {
           color: selected ? '#0C0C14' : 'rgba(0,0,0,0.38)',
         }}
       >
-        {/* Pin icon */}
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
           stroke={selected ? '#000066' : 'rgba(0,0,102,0.35)'}
           strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
@@ -78,7 +75,6 @@ function LocalDropdown({ locais, value, onChange, vagas }: {
         )}
       </button>
 
-      {/* Dropdown panel */}
       {open && (
         <div
           className="absolute left-0 right-0 top-full mt-1.5 z-50 overflow-hidden"
@@ -90,7 +86,6 @@ function LocalDropdown({ locais, value, onChange, vagas }: {
           }}
         >
           <div className="py-1.5 max-h-56 overflow-y-auto">
-            {/* Todos */}
             <button
               type="button"
               onClick={() => { onChange(''); setOpen(false) }}
@@ -116,11 +111,10 @@ function LocalDropdown({ locais, value, onChange, vagas }: {
               </span>
             </button>
 
-            {/* Separator */}
             <div className="mx-3 my-1" style={{ height: '1px', background: 'rgba(0,0,102,0.06)' }} />
 
             {locais.map((l) => {
-              const count = vagas.filter(v => `${v.city?.name}-${v.state?.code}` === l.value).length
+              const count = vagas.filter(v => `${v.city}-${v.stateCode}` === l.value).length
               const isSelected = value === l.value
               return (
                 <button
@@ -166,8 +160,7 @@ export function VagasFilter({ vagas }: Props) {
   const locais = useMemo(() => {
     const seen = new Set<string>()
     return vagas
-      .filter((v) => v.city && v.state)
-      .map((v) => ({ label: `${v.city!.name} · ${v.state!.code}`, value: `${v.city!.name}-${v.state!.code}` }))
+      .map((v) => ({ label: `${v.city} · ${v.stateCode}`, value: `${v.city}-${v.stateCode}` }))
       .filter((l) => !seen.has(l.value) && seen.add(l.value))
       .sort((a, b) => a.label.localeCompare(b.label))
   }, [vagas])
@@ -175,14 +168,13 @@ export function VagasFilter({ vagas }: Props) {
   const filtradas = useMemo(() => {
     return vagas.filter((v) => {
       const matchBusca = !busca || v.title.toLowerCase().includes(busca.toLowerCase())
-      const matchLocal = !local || `${v.city?.name}-${v.state?.code}` === local
+      const matchLocal = !local || `${v.city}-${v.stateCode}` === local
       return matchBusca && matchLocal
     })
   }, [vagas, busca, local])
 
   return (
     <>
-      {/* ── Barra de filtros ── */}
       {vagas.length > 0 && (
         <div
           className="mb-8 grid sm:grid-cols-2 gap-3"
@@ -193,7 +185,6 @@ export function VagasFilter({ vagas }: Props) {
             border: '1.5px solid rgba(0,0,102,0.07)',
           }}
         >
-          {/* Busca por título */}
           <div className="relative">
             <svg
               className="absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
@@ -228,12 +219,10 @@ export function VagasFilter({ vagas }: Props) {
             )}
           </div>
 
-          {/* Dropdown customizado */}
           <LocalDropdown locais={locais} value={local} onChange={setLocal} vagas={vagas} />
         </div>
       )}
 
-      {/* ── Grid de vagas ── */}
       {filtradas.length === 0 && vagas.length > 0 ? (
         <div className="text-center py-14" style={{ color: '#78787E' }}>
           <svg className="mx-auto mb-3 opacity-30" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -253,8 +242,8 @@ export function VagasFilter({ vagas }: Props) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-5">
             {filtradas.slice(0, 6).map((vaga) => (
               <a
-                key={vaga.id}
-                href={vagaUrl(vaga.id)}
+                key={vaga.url}
+                href={vaga.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col justify-between bg-white p-6 transition-all hover:shadow-md hover:-translate-y-0.5"
@@ -268,22 +257,14 @@ export function VagasFilter({ vagas }: Props) {
                     {vaga.title}
                   </h3>
                   <div className="flex flex-wrap gap-1.5 mb-4">
-                    {vaga.city && vaga.state && (
-                      <span className="text-[11px] font-medium px-2.5 py-1 rounded-full"
-                        style={{ background: 'rgba(0,0,102,0.06)', color: '#000066' }}>
-                        {vaga.city.name} · {vaga.state.code}
-                      </span>
-                    )}
                     <span className="text-[11px] font-medium px-2.5 py-1 rounded-full"
                       style={{ background: 'rgba(0,0,102,0.06)', color: '#000066' }}>
-                      {jobTypeLabel(vaga.jobType)}
+                      {vaga.city} · {vaga.stateCode}
                     </span>
-                    {vaga.recruitmentContractType[0] && (
-                      <span className="text-[11px] font-medium px-2.5 py-1 rounded-full"
-                        style={{ background: 'rgba(255,204,0,0.14)', color: '#6B4F00' }}>
-                        {vaga.recruitmentContractType[0].name}
-                      </span>
-                    )}
+                    <span className="text-[11px] font-medium px-2.5 py-1 rounded-full"
+                      style={{ background: 'rgba(0,0,102,0.06)', color: '#000066' }}>
+                      {vaga.modality}
+                    </span>
                   </div>
                 </div>
                 <div className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: '#000066' }}>
@@ -302,7 +283,7 @@ export function VagasFilter({ vagas }: Props) {
                 Exibindo 6 de {filtradas.length} vagas
               </p>
               <a
-                href="https://eisen.vagas.solides.com.br"
+                href="https://grupo-eisen.careers.ats.bizneo.cloud/jobs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold hover:opacity-75 transition-opacity"
