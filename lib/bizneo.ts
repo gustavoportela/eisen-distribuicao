@@ -15,7 +15,7 @@ const STATES = [
   { name: 'Paraná',            code: 'PR', county: 'county:kVH-LX8ghjoq' },
 ] as const
 
-const BASE = 'https://grupo-eisen.careers.ats.bizneo.cloud/jobs'
+const BASE = 'https://vagas.grupoeisen.com.br/jobs'
 
 async function fetchByState(county: string, stateName: string, stateCode: string): Promise<BizneVaga[]> {
   const res = await fetch(`${BASE}?location=${encodeURIComponent(county)}`, {

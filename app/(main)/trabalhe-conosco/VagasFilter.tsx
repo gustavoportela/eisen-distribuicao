@@ -283,7 +283,7 @@ export function VagasFilter({ vagas }: Props) {
                 Exibindo 6 de {filtradas.length} vagas
               </p>
               <a
-                href="https://grupo-eisen.careers.ats.bizneo.cloud/jobs"
+                href="https://vagas.grupoeisen.com.br/jobs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-sm font-semibold hover:opacity-75 transition-opacity"

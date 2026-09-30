@@ -256,7 +256,7 @@ export default async function TrabalheConoscoPage() {
                     </p>
                   </div>
                   <a
-                    href="https://grupo-eisen.careers.ats.bizneo.cloud/jobs"
+                    href="https://vagas.grupoeisen.com.br/jobs"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="shrink-0 inline-flex items-center gap-2 font-semibold px-6 py-3 hover:opacity-90 transition-opacity whitespace-nowrap"
@@ -316,7 +316,7 @@ export default async function TrabalheConoscoPage() {
               }
             `}</style>
             <a
-              href="https://grupo-eisen.careers.ats.bizneo.cloud/jobs"
+              href="https://vagas.grupoeisen.com.br/jobs"
               target="_blank"
               rel="noopener noreferrer"
               className="portal-banner relative flex flex-col sm:flex-row items-center justify-between gap-8 overflow-hidden"
